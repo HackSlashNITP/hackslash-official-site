@@ -5,4 +5,5 @@
 # Folder Structure
 ![Folder Structure](/public/folder_structure.png)
 
-
+# For contributors
+- Must check the Contribution-guide.md
