@@ -21,7 +21,13 @@ const Navbar = () => {
             <Link href={'/projects'}>Our projects</Link>
             <Link href={'/contact'}>Contact us</Link>
         </nav>
-        <UserState />
+
+        {/* The In future there will be no registration of new user, only 'us' will be able to login with credentials */}
+    
+        {/* Do not use the UserState component now. I will make it usable once we get the official mongoDB clustor url */}
+        {/* If you want to try out this feature , make sure mongoDB is installed and running in your PC */}
+
+        {/* <UserState /> */} 
     </section>
   )
 }
