@@ -18,7 +18,9 @@ const Register = () => {
   }
   
   return (
-    <section className='flex items-center justify-center h-[calc(100vh-64px)]'>
+    <section className='flex flex-col items-center justify-center h-[calc(100vh-64px)]'>
+      <h2 className='text-yellow-500'>This page will be deprecated in future </h2>
+      <h1 className='text-yellow-500'>Do not use this page if you have not download mongoDB or mongoDB is not currently running in your PC</h1>
       <form action={submit} className='flex flex-col items-center gap-4 text-black'>
         <h1 className='font-bold text-center text-lg text-white'>Register</h1>
         <input type="Username" className='p-2 rounded-sm' name='username' />
