@@ -8,4 +8,6 @@
 # For contributors
 - Must check the Contribution-guide.md
 
-- This is for test purpose.
+<a href="https://github.com/HackSlashNITP/hackslash-official-site/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=HackSlashNITP/hackslash-official-site" />
+</a>
