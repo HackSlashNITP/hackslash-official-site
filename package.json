@@ -11,12 +11,13 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
     "bcrypt": "^5.1.1",
-    "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.3",
     "next": "14.2.5",
+    "next-cloudinary": "^6.10.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-quill": "^2.0.0",
     "react-redux": "^9.1.2",
     "redux-persist": "^6.0.0"
   },
