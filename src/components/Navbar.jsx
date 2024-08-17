@@ -1,35 +1,47 @@
 'use client'
-import { UserContext } from '@/lib/userContext'
+import Image from 'next/image'
 import Link from 'next/link'
-import React, { useContext } from 'react'
-import UserState from './UserState'
+import { usePathname } from 'next/navigation';
+import React, { useEffect, useState } from 'react'
+
+const List = [
+  { name: "Home", path: "/" },
+  { name: "Resources", path: "/resources" },
+  { name: "Blogs", path: "/blogs" },
+  { name: "Gallery", path: "/gallery" },
+  { name: "Our Projects", path: "/projects" }
+];
 
 const Navbar = () => {
-  
-    // this is just for basic navigation | The design will be changed in future
+  const  pathname = usePathname();
+  const [active , setActive] = useState("pathname");
+
+  useEffect(()=> { 
+    setActive(pathname);
+  }, [pathname])
   return (
-    <section className='flex justify-center gap-4 h-16 items-center bg-black sticky top-0 z-50 '>
-        <nav className='hidden md:flex gap-4'>
-            <div className='px-4'>
-            <Link href={'/'}>Hackslash (Navbar designed will be changed)</Link>
+    <>
+      <div className='w-full h-[30px] lg:h-[55.06px] bg-transparent sticky top-[22.5px] grid grid-cols-3 items-center'>
+        <div className=" ml-[30px] md:ml-[50px] xl:ml-[90px] col-span-1 bottom-1">
+          <Image src="/hackslash-logo.png" alt="HackSlash Logo" width={150} height={36} />
+        </div>
+        <div className='flex justify-end col-span-2 items-center space-x-3 md:space-x-6 lg:space-x-9 xl:space-x-12 mr-[12px] md:mr-[30px] xl:mr-[50px]'>
+          {List.map((link, index) => (
+            <div className='relative hidden md:flex'>
+              <Link key={index} href={link.path} className='text-base lg:text-xl hover:text-slate-300 transition-all' onClick={() => setActive(link.path)}>
+              {link.name}
+            </Link>
+            {active === link.path && (
+              <span className='absolute left-1/2 transform -translate-x-1/2 -bottom-[0.4px] w-[120%] h-[2px] bg-primary'></span>)}
             </div>
-            <Link href={'/'}>Home</Link>
-            <Link href={'/resources'}>Resources</Link>
-            <Link href={'/blogs'}>Blog</Link>
-            <Link href={'/gallery'}>Gallery</Link>
-            <Link href={'/events'}>Events</Link>
-            <Link href={'/projects'}>Our projects</Link>
-            <Link href={'/contact'}>Contact us</Link>
-        </nav>
-
-        {/* The In future there will be no registration of new user, only 'us' will be able to login with credentials */}
-    
-        {/* Do not use the UserState component now. I will make it usable once we get the official mongoDB clustor url */}
-        {/* If you want to try out this feature , make sure mongoDB is installed and running in your PC */}
-
-        {/* <UserState /> */} 
-    </section>
-  )
+          ))}
+          <button className='leading-none text-base xl:text-xl font-medium bg-primary px-1 md:px-3 py-0.5 md:py-1 text-black rounded-sm hover:scale-105  transition-all delay-[120] hover:bg-dark'>
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default Navbar
+export default Navbar;
