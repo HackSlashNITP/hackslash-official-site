@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",  // Set baseUrl to the directory containing your source files
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["*"]  // Maps @/ to ./src/*
     }
-  }
+  },
+  "include": ["src/**/*"]
 }
