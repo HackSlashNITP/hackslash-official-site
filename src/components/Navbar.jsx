@@ -8,8 +8,8 @@ const Navbar = () => {
   
     // this is just for basic navigation | The design will be changed in future
   return (
-    <section className='flex justify-center gap-4 h-16 items-center bg-gray-900 '>
-        <nav className='flex gap-4'>
+    <section className='flex justify-center gap-4 h-16 items-center bg-black '>
+        <nav className='hidden md:flex gap-4'>
             <div className='px-4'>
             <Link href={'/'}>Hackslash (Navbar designed will be changed)</Link>
             </div>

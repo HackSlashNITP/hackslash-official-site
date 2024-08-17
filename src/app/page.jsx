@@ -4,7 +4,7 @@ import { verifyToken } from "@/lib/actions";
 
 export default async function Home() {
 
-  const data = await verifyToken();
+  
   
   return (
     <main className="flex flex-col gap-4">

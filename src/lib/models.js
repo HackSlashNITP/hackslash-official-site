@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         default : "/userAvatar.png"
     }
-})
+}, {timestamps : true})
 
 const postSchema = new mongoose.Schema({
     title : {
@@ -29,7 +29,7 @@ const postSchema = new mongoose.Schema({
         type : mongoose.Types.ObjectId,
         ref : "User"
     }
-})
+}, {timestamps : true})
 
 const User = mongoose.models?.User || mongoose.model("User", userSchema)
 const Post = mongoose.models?.Post || mongoose.model("Post", postSchema )
