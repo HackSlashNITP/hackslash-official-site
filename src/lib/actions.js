@@ -76,7 +76,7 @@ export const login = async (formData) => {
 
         const token = jwt.sign({
             userId: existingUser._id
-        }, process.env.JWT_SECRET, { expiresIn: '7d' });
+        }, process.env.JWT_SECRET || "JNajsd98hjd8scsdh8b99sjd", { expiresIn: '7d' });
 
         cookieStore.set('token', token, {
             maxAge: 7 * 24 * 60 * 60 * 1000,
