@@ -21,7 +21,7 @@ const Navbar = () => {
   }, [pathname])
   return (
     <>
-      <div className='w-full h-[30px] lg:h-[55.06px] bg-transparent sticky top-[22.5px] grid grid-cols-3 items-center'>
+      <div className='w-full h-[30px] lg:h-[55.06px] bg-transparent sticky top-[22.5px] grid grid-cols-3 items-center z-50'>
         <div className=" ml-[30px] md:ml-[50px] xl:ml-[90px] col-span-1 bottom-1">
           <Image src="/hackslash-logo.png" alt="HackSlash Logo" width={150} height={36} />
         </div>

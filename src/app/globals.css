@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -18,18 +19,17 @@
   }
 }
 
+*::-webkit-scrollbar{
+  width: 0px;
+  display: none;
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Iceland";
-}
-
-#container{
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow-y: scroll;
+  scrollbar-width: none;
 }
 
 body {

@@ -28,7 +28,7 @@ const BlogPost = async ({params}) => {
     <div className='w-[90%] bg-gray-900 p-8 rounded-lg'>
       
       <h1>{post.title}</h1>
-      <p dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(post.desc)}}></p>
+      {/* <p dangerouslySetInnerHTML={{__html : DOMPurify.sanitize(post.desc)}}></p> */}
     </div>
    </section>
   )
