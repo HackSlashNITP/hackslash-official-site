@@ -9,7 +9,7 @@ export const connectToDb = async () => {
             return;
         }
 
-        const db = await mongoose.connect('mongodb://127.0.0.1:27017/hackslash'); // this is just for now, we will use altas in future
+        const db = await mongoose.connect('mongodb+srv://harsh2005choudhari:Df9pwPdizjtwirBp@hackslashtest.phb5u.mongodb.net/hackslashData?retryWrites=true&w=majority&appName=hackslashTest'); // this is hardcoded just for now | Will be changed later
         console.log("New connection | Connected to DB");
         connection.isConnected = db.connections[0].readyState;
         // console.log(connection);
