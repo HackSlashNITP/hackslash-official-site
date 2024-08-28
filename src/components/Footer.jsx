@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-12">
+    <footer className="bg-black text-white py-12 text-lg">
       {/* Top Border */}
       <div className="w-11/12 mx-auto border-t border-gray-700 mt-4 pt-24"></div>
 
@@ -23,7 +23,7 @@ const Footer = () => {
                 className="rounded-full" 
               />
             </div>
-            <p className="mb-4 text-sm">Let's connect with our socials</p>
+            <p className="mb-4 text-md">Let's connect with our socials</p>
             <div className="flex gap-7">
               <Link href="#"><Image src="/icons/instagram.svg" alt="Instagram" width={20} height={20} /></Link>
               <Link href="#"><Image src="/icons/linkedin.svg" alt="LinkedIn" width={20} height={20} /></Link>
@@ -37,7 +37,7 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-start md:flex-row md:space-x-16 mb-8 md:mb-0 w-full md:w-2/3">
             <div className="mb-8 md:mb-0 w-full md:w-1/2">
               <h4 className="text-base font-semibold mb-5">Useful Links</h4>
-              <ul className="space-y-3 text-sm">
+              <ul className="space-y-3 text-md">
                 <li><Link href="#" className="hover:text-green-400">About Us</Link></li>
                 <li><Link href="#" className="hover:text-green-400">Support</Link></li>
                 <li><Link href="#" className="hover:text-green-400">Privacy Policy</Link></li>
@@ -48,7 +48,7 @@ const Footer = () => {
             </div>
             <div className="w-full md:w-1/2">
               <h4 className="text-base font-semibold mb-5">COMMUNITY</h4>
-              <ul className="space-y-3 text-sm">
+              <ul className="space-y-3 text-md">
                 <li><Link href="#" className="hover:text-green-400">Forum</Link></li>
                 <li><Link href="#" className="hover:text-green-400">Discord</Link></li>
               </ul>
@@ -58,10 +58,10 @@ const Footer = () => {
           {/* Right Section */}
           <div className="w-full md:w-1/4 mt-8 md:mt-0">
             <h4 className="text-base font-semibold mb-5">Get In Touch</h4>
-            <p className="mb-2 text-sm hover:text-green-400 cursor-pointer">+91 123456789</p>
-            <p className="mb-2 text-sm hover:text-green-400 cursor-pointer">+91 123456789</p>
-            <p className="mb-2 text-sm hover:text-green-400 cursor-pointer">HackSlash@nitp.ac.in</p>
-            <p className="text-sm hover:text-green-400 cursor-pointer">Patna university campus,<br /> Patna, Bihar 800005</p>
+            <p className="mb-2 text-md hover:text-green-400 cursor-pointer">+91 123456789</p>
+            <p className="mb-2 text-md hover:text-green-400 cursor-pointer">+91 123456789</p>
+            <p className="mb-2 text-md hover:text-green-400 cursor-pointer">HackSlash@nitp.ac.in</p>
+            <p className="text-md hover:text-green-400 cursor-pointer">Patna university campus,<br /> Patna, Bihar 800005</p>
           </div>
         </div>
       </div>
