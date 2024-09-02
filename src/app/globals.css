@@ -47,3 +47,39 @@ body {
     text-wrap: balance;
   }
 }
+
+image-slider-container {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.image-slider-container .slick-prev:before,
+.image-slider-container .slick-next:before {
+  color: white;
+}
+
+.slick-dots{
+  position: relative;
+  top: 90%;
+}
+@media not all and (min-width: 768px) {
+  .slick-dots{
+      top:85%;
+  }
+}
+.slick-next{ 
+  right:10px !important;
+  z-index:1 !important;
+ }
+.slick-prev{
+   left: 0 !important; 
+   z-index: 1 !important;
+  }
+.slick-next:before,.slick-prev:before{
+  font-size: xx-large !important;
+}
+
+.slick-dots li button:before{
+  color:white !important;
+  font-size: small !important; 
+}
