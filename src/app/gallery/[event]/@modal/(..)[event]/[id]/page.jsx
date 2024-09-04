@@ -20,9 +20,7 @@ export default function PhotoModal({params}) {
 
   return (
     <Modal>
-        <div className="w-full bg-red-500">
       <div className=" flex bg-green-100 justify-end ">
-        
         <button
         className="text-slate-800 text-3xl font-bold bg-[#00ff9d] relative  p-5 "
         onClick={() => {
@@ -31,7 +29,6 @@ export default function PhotoModal({params}) {
       >
         X
       </button>
-        </div>
         </div>
       <Image
         src={group.src[parseInt(params.id)]}
