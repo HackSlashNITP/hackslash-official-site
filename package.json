@@ -20,6 +20,7 @@
     "react-dom": "^18",
     "react-quill": "^2.0.0",
     "react-redux": "^9.1.2",
+    "react-select": "^5.8.0",
     "react-slick": "^0.30.2",
     "redux-persist": "^6.0.0",
     "slick-carousel": "^1.8.1"
