@@ -129,7 +129,8 @@ export default async function Home() {
       </div>
         
         {/* Section 04 */}
-      <div className=' relative flex flex-col w-full max-w-[1266px] mx-auto items-center space-y-10 py-8'>
+        <div className="w-11/12 mx-auto border-t border-gray-700 mt-20 "></div>
+      <div className=' relative flex flex-col w-full max-w-[1266px] mx-auto items-center  '>
       <Image src={'/Vector.svg'} alt="circle1" height={100} width={100} className='w-[200px] h-[200px] absolute top-[350px] left-[-90px] blur-3xl ' />
       <div className="flex flex-col md:flex-row items-center justify-between md:gap-20 bg-black min-h-screen p-8">
       {/* Left Side - Form */}
