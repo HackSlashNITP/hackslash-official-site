@@ -20,21 +20,25 @@ export default function PhotoModal({params}) {
 
   return (
     <Modal>
-      <div className=" flex bg-green-100 justify-end ">
-        <button
-        className="text-slate-800 text-3xl font-bold bg-[#00ff9d] relative  p-5 "
-        onClick={() => {
-          history.go(-1)
-        }}
-      >
-        X
-      </button>
+      <div className="flex-row justify-center items-center h-[75vh] w-max">
+        <div>
+          <div className="  bg-green-100  flex justify-end">
+            <button
+              className="text-slate-800 text-3xl font-bold bg-[#00ff9d] relative  p-5 "
+              onClick={() => {
+                history.go(-1)
+              }}
+            >
+              X
+            </button>
+          </div>
         </div>
       <Image
         src={group.src[parseInt(params.id)]}
         alt={`${title}`}
-        className="w-full object-cover aspect-square"
+        className="h-[70vh] w-auto object-contain"
       />
+      </div>
     </Modal>
   );
 }
