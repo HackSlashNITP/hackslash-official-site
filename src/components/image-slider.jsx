@@ -1,44 +1,37 @@
-"use client";
-
-import React from "react";
+'use client'
+import React,{useRef} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Carousel } from "@/assets/cats";
 import Image from "next/image";
 
-export const ImageSlider = () => {
-    const slider = React.useRef(null);
-
-
-
+export const ImageSlider = ({ images }) => {
+  const slider = useRef(null);
 
   const settings = {
     dots: true,
-    adaptiveHeight: false,
-    autoplay:true,
-
-    
+    infinite: true,
+    speed: 500,
+    arrows: true,
   };
+
   return (
-    
-    <div className="w-[90vw]  h-[80vh] max-lg:h-auto rounded-md m-auto">
-    <div className="image-slider-container">
-      
+    <div className="w-full h-full rounded-md">
+      <div>
         <Slider ref={slider} {...settings}>
-            {Carousel.src.map((image,index)=>(
-                <div className="flex justify-center items-center" key={index}>
-                    <Image 
-                        alt="Image"
-                        src={image}
-                        className="max-md:h-[35vh] h-[70vh] w-[90vw]  object-cover rounded-xl"
-                    />
-                </div>
-            ))}
+          {images.map((image, index) => (
+            <div className="flex justify-center items-center" key={index}>
+              <Image
+                alt={`Image ${index + 1}`}
+                src={image}
+                width={1200} 
+                height={600} 
+                className="h-[50vh] sm:h-[60vh] md:h-[70vh] w-full object-cover rounded-xl"
+              />
+            </div>
+          ))}
         </Slider>
-        
+      </div>
     </div>
-    </div>
-    
   );
 };
