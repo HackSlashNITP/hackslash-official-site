@@ -10,7 +10,7 @@ const List = [
   { name: "Resources", path: "/resources" },
   { name: "Blogs", path: "/blogs" },
   { name: "Gallery", path: "/gallery" },
-  { name: "Our Projects", path: "/projects" }
+  { name: "Events", path: "/events" }
 ];
 
 const Navbar = () => {
