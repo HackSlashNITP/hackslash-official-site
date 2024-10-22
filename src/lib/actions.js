@@ -1,7 +1,7 @@
 'use server'
 import { cookies } from 'next/headers'
 import { connectToDb } from "./db";
-import { Post, User } from "./models";
+import { Event, Post, User } from "./models";
 import bcrypt from "bcrypt"
 import jwt from 'jsonwebtoken'
 
@@ -166,6 +166,38 @@ export const createBlog = async (value,images, title) => {
     return {
         success : "Blog created successfully",
         url : "/blogs/" + newPost._id
+    }
+    
+        
+    } catch (error) {
+        console.log(error);
+        return {
+            error : error.message || "Something went wrong"
+        }
+    }
+}
+
+export const createEvent = async (value,images, title) => {
+    try {
+    // console.log(value,images, title);
+    const data = await verifyToken();
+    if(!data.isVerified) {
+        throw new Error("Not authorized")
+    }
+
+    await connectToDb();
+    const newEvent = new Event({
+        title,
+        desc : value,
+        images,
+        author : data.user.userId
+    })
+
+    await newEvent.save();
+
+    return {
+        success : "Event created successfully",
+        url : "/events/" + newEvent._id
     }
     
         

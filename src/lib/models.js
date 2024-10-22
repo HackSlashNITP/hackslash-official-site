@@ -31,7 +31,22 @@ const postSchema = new mongoose.Schema({
     }
 }, {timestamps : true})
 
+const eventSchema = new mongoose.Schema({
+    title : {
+        type : String,
+        req : true
+    },
+    desc : String,
+    images : [String],
+    author : {
+        type : mongoose.Types.ObjectId,
+        ref : "User"
+    }
+}, {timestamps : true})
+
+
 const User = mongoose.models?.User || mongoose.model("User", userSchema)
 const Post = mongoose.models?.Post || mongoose.model("Post", postSchema )
+const Event = mongoose.models?.Event || mongoose.model("Event", eventSchema )
 
-export {User, Post};
+export {User, Post, Event};
