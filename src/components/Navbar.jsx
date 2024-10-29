@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className='flex justify-end col-span-2 items-center space-x-3 md:space-x-6 lg:space-x-9 xl:space-x-12 mr-[20px] sm:mr-[25px] md:mr-[30px] xl:mr-[50px]'>
           {List.map((link, index) => (
             <div key={index} className='relative hidden md:flex'>
-              <Link key={index} href={link.path} className='text-base lg:text-xl hover:text-slate-300 transition-all' onClick={() => setActive(link.path)}>
+              <Link key={index} href={link.path} className='text-base text-white lg:text-xl hover:text-slate-300 transition-all' onClick={() => setActive(link.path)}>
                 {link.name}
               </Link>
               {active === link.path && (

@@ -64,7 +64,7 @@ const CreateEvent = () => {
   }
 
   return (
-    <section className='flex flex-col items-center'>
+    <section className='flex flex-col items-center text-white'>
       <h1 className='font-bold text-3xl'>Create an Event</h1>
       <div className='flex-col lg:flex-row flex gap-4 w-full p-4'>
         <div className='flex-[3] flex flex-col gap-4'>

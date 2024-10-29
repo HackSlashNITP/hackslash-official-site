@@ -45,14 +45,14 @@ const Admin = async () => {
 
     return (
         <main className='px-8 lg:px-16'>
-            <h1 className='text-6xl text-center font-bold'>Dashboard</h1>
+            <h1 className='text-6xl text-center font-bold text-white'>Dashboard</h1>
 
             <div className='flex flex-col gap-8 lg:flex-row'>
 
                 {/* For managing the blogs */}
                 <div className='flex-1 flex flex-col gap-2 lg:max-w-[33.33%]'>
-                    <div className='flex gap-2 items-center justify-center'>
-                        <h2 className='text-3xl'>Events</h2>
+                    <div className='flex gap-2 items-center text-white justify-center'>
+                        <h2 className='text-3xl '>Events</h2>
                         <Link href={'/events/create'} className='text-xl px-2 bg-gray-600 rounded-xl'>Add</Link>
                     </div>
 
@@ -82,7 +82,7 @@ const Admin = async () => {
 
                 {/* For managing the Blogs */}
                 <div className='flex-1 flex flex-col gap-2 lg:max-w-[33.33%]'>
-                    <div className='flex gap-2 items-center justify-center'>
+                    <div className='flex gap-2 items-center text-white justify-center'>
                         <h2 className='text-3xl'>Blogs</h2>
                         <Link href={'/blogs/create'} className='text-xl px-2 bg-gray-600 rounded-xl'>Add</Link>
                     </div>
@@ -113,7 +113,7 @@ const Admin = async () => {
 
                 {/* For managing the admin accounts */}
                 <div className='flex-1 flex flex-col gap-2 lg:max-w-[33.33%]'>
-                    <div className='flex gap-2 items-center justify-center'>
+                    <div className='flex gap-2 text-white items-center justify-center'>
                         <h2 className='text-3xl'>Accounts</h2>
                         <Link href={'/register'} className='text-xl px-2 bg-gray-600 rounded-xl'>Add</Link>
                     </div>

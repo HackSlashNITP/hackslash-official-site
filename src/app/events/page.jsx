@@ -16,7 +16,7 @@ const EventsPage = async () => {
   return (
     <section className='flex flex-col items-center noScrollbar' style={{background : 'url("/blogs-bg.jpg")', backgroundPosition : 'center', backgroundSize: 'cover', backgroundAttachment : 'fixed'}}>
       <div className='flex flex-col items-center gap-4 w-full'>
-        <h1 className='text-4xl font-bold m-4'>Events</h1>
+        <h1 className='text-4xl font-bold m-4 text-white'>Events</h1>
         <div className='flex flex-wrap w-full px-8 gap-8 justify-between'>
 
           {
