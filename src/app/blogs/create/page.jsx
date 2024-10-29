@@ -48,8 +48,8 @@ const CreateBlog = () => {
 
   const handleClick = async () => {
     try {
-      if(!value || !title) {
-        return alert('Please enter some text');
+      if(!value || !title || !(images.length > 0)) {
+        return alert('Please add all fields');
       }
 
       const data = await createBlog(value, images, title);

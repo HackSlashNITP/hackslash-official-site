@@ -11,12 +11,13 @@ import { UserContext } from '@/lib/userContext';
 const CreateEvent = () => {
   const [value, setValue] = useState('');
   const [images, setImages] = useState([]);
+  const [date, setDate] = useState(null);
   const [title, setTitle] = useState('');
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const {user} = useContext(UserContext);
 
-  useEffect(() => {;
+  useEffect(() => {
     if(user == undefined) {
       return;
     }
@@ -47,11 +48,11 @@ const CreateEvent = () => {
 
   const handleClick = async () => {
     try {
-      if(!value || !title) {
-        return alert('Please enter some text');
+      if(!value || !title || !(images.length > 0) || !date) {
+        return alert('Please add all fields');
       }
 
-      const data = await createEvent(value, images, title);
+      const data = await createEvent(value, images, title, date);
       if(data?.success) {
        return  router.push(data?.url);
       }
@@ -69,6 +70,8 @@ const CreateEvent = () => {
       <div className='flex-col lg:flex-row flex gap-4 w-full p-4'>
         <div className='flex-[3] flex flex-col gap-4'>
           <input type="text" name='title' value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Enter a title for the event' className='bg-gray-900 p-2 rounded-md'/>
+          <input type="date" name="date" className='w-fit bg-black text-white bg-gray-900 p-2 rounded-md' onChange={(e) => setDate(e.target.value)
+          }/>
           <ReactQuill className='h-[450px]' theme="snow" value={value} onChange={setValue} />
         </div>
 

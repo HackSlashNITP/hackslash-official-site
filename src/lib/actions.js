@@ -178,9 +178,9 @@ export const createBlog = async (value, images, title) => {
     }
 }
 
-export const createEvent = async (value, images, title) => {
+export const createEvent = async (value, images, title,date) => {
     try {
-        // console.log(value,images, title);
+        
         const data = await verifyToken();
         if (!data.isVerified) {
             throw new Error("Not authorized")
@@ -191,8 +191,10 @@ export const createEvent = async (value, images, title) => {
             title,
             desc: value,
             images,
-            author: data.user.userId
+            author: data.user.userId,
+            eventDate : new Date(date)
         })
+        
 
         await newEvent.save();
 
