@@ -13,7 +13,7 @@ export default async function EventPage({params}){
     // const group=index[0]
 
     return(
-        <>
+        <div className="text-white">
         <div className="grid place-items-center">
             <h1 className="text-center text-3xl bg-gradient-to-b from-[rgba(52,52,52,0.9)] to-[rgba(52,52,52,0.4)] inline-block px-4 py-2 rounded-lg border-[1px] border-[#9C9C9C] m-2">{event.title}</h1>
         </div>
@@ -44,6 +44,6 @@ export default async function EventPage({params}){
             
         ))}
         </div>
-        </>
+        </div>
     )
 }

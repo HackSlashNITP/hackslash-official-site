@@ -19,7 +19,7 @@ const BlogPost = async ({ params }) => {
   }
 
   return (
-    <section className="flex flex-col items-center justify-center p-4 md:p-8">
+    <section className="flex flex-col items-center justify-center p-4 md:p-8 text-white">
       <div className="w-full md:w-[90%] lg:w-[75%] bg-gray-900 p-4 sm:p-8 rounded-lg">
         {/* Blog Title */}
         <h1 className="text-2xl sm:text-4xl font-bold mb-4">{post.title}</h1>

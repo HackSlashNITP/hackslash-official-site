@@ -34,7 +34,7 @@ export default function ImageGroup(prop){
                 className="object-cover h-[16vh]  max-lg:h-[11vh] max-lg:w-[18vw] rounded-md"
                 />}
                 {event.images.length>4 && <div className="grid place-items-center h-full w-full border-[1px] border-[#9C9C9C] rounded-md bg-gradient-to-b from-[rgba(52,52,52,0.9)] to-[rgba(52,52,52,0.4)]" >
-                    <h1 className="text-5xl font-semibold max-lg:text-3xl">+{event.images.length-3}</h1>
+                    <h1 className="text-5xl font-semibold max-lg:text-3xl text-white">+{event.images.length-3}</h1>
                 </div>}
             </div>
             <div className="mt-4 max-lg:mt-1">
