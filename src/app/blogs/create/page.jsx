@@ -1,17 +1,38 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { CldImage, CldUploadWidget } from 'next-cloudinary';
 import Image from 'next/image';
 import { createBlog } from '@/lib/actions';
-import { useRouter } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
+import { UserContext } from '@/lib/userContext';
 
 const CreateBlog = () => {
   const [value, setValue] = useState('');
   const [images, setImages] = useState([]);
   const [title, setTitle] = useState('');
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
+  const {user} = useContext(UserContext);
+
+  useEffect(() => {;
+    if(user == undefined) {
+      return;
+    }
+    if(!user) {
+      router.push('/login');
+    }else {
+      setLoading(false)
+    }
+  },[user])
+  
+  if(loading) {
+    return (
+      <div>Loading...</div>
+    )
+  }
+  
 
   const removeImg = (index) => {
     try {
@@ -46,7 +67,7 @@ const CreateBlog = () => {
   return (
     <section className='flex flex-col items-center'>
       <h1 className='font-bold text-3xl'>Create a blog</h1>
-      <div className='flex gap-4 w-full p-4'>
+      <div className='flex-col lg:flex-row flex gap-4 w-full p-4'>
         <div className='flex-[3] flex flex-col gap-4'>
           <input type="text" name='title' value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Enter a title for the blog' className='bg-gray-900 p-2 rounded-md'/>
           <ReactQuill className='h-[450px]' theme="snow" value={value} onChange={setValue} />
@@ -54,6 +75,7 @@ const CreateBlog = () => {
 
         <div className='flex-[1] flex flex-col items-center gap-8'>
           <h1 className='text-xl font-semibold'>Media</h1>
+          <p className='text-gray-500'>*The first image will be used as thumbnail</p>
 
           <CldUploadWidget uploadPreset="hackslash" onSuccess={(result, { widget }) => {
             // console.log(result);

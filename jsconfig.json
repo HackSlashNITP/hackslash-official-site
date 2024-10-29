@@ -5,5 +5,5 @@
       "@/*": ["*"]  // Maps @/ to ./src/*
     }
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "src/middleware.js", "next.config.mjs"]
 }
