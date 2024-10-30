@@ -7,7 +7,7 @@ export const TeamCard=({teamName,team,image,url})=>{
         router.push(url);
     }
     return (
-        <div className='p-5 m-3 hover:bg-gray-700 rounded-md duration-300 z-50' onClick={onTeamSelect}>
+        <div className='p-5 m-3 hover:bg-gray-700 rounded-md duration-300 z-40' onClick={onTeamSelect}>
             <div className='rounded-full h-[310px] w-[310px] flex justify-center items-center bg-black'>
                  <Image alt='Team Name' className='rounded-full h-[300px] w-[300px] m-2' src={image}/>
             </div>
