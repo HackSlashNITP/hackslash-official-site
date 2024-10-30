@@ -55,7 +55,7 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className={`absolute transition-transform duration-500 ease-in-out transform ${isDropdownOpen ? 'scale-0 rotate-45 opacity-0' : 'scale-100 rotate-0 opacity-100'}`}
+                className={`absolute text-white transition-transform duration-500 ease-in-out transform ${isDropdownOpen ? 'scale-0 rotate-45 opacity-0' : 'scale-100 rotate-0 opacity-100'}`}
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
               </svg>
@@ -66,7 +66,7 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className={`absolute transition-transform duration-500 ease-in-out transform ${isDropdownOpen ? 'scale-100 rotate-0 opacity-100' : 'scale-0 rotate-45 opacity-0'}`}
+                className={`absolute text-white transition-transform duration-500 ease-in-out transform ${isDropdownOpen ? 'scale-100 rotate-0 opacity-100' : 'scale-0 rotate-45 opacity-0'}`}
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
@@ -84,7 +84,7 @@ const Navbar = () => {
                 <Link 
                   key={index} 
                   href={link.path} 
-                  className='transition-all duration-[700ms] transform hover:scale-105 decoration-[0.4px] underline underline-offset-4 justify-center items-center text-lg py-2 flex animate-slide-in'
+                  className='transition-all duration-[700ms] transform hover:scale-105 decoration-[0.4px] underline text-white underline-offset-4 justify-center items-center text-lg py-2 flex animate-slide-in'
                   style={{ animationDelay: `${index * 0.1}s` }}
                   onClick={() => {
                     setActive(link.path);

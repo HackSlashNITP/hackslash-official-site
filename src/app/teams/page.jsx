@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
 import WebTeamImage from '../../../public/team405.jpeg';
@@ -8,6 +9,7 @@ import BlockchainTeamImage from '../../../public/blockchain.jpeg';
 import DSATeamImage from '../../../public/DSA.png';
 import Ellip from '../../../public/ellip.svg'
 import { TeamCard } from '@/components/TeamCard'
+import CicleImage from '../../../public/Circle.png';
 
 const Teams = () => {
   const TeamsData=[
@@ -48,10 +50,16 @@ const Teams = () => {
       url:'/teams/dsa'
     }
   ];
+  const lessThanXl=window.innerWidth<=914;
   return (
     <div className='w-screen'>
         <Image alt='ellip.svg' className='absolute lg:left-10 lg:top-32 lg:h-24 sm:h-24 sm:left-4 sm:top-20 left-[-15px] top-18 h-12 aspect-square' src={Ellip}/>
         <Image alt='ellip.svg' className='absolute lg:top-64 sm:h-24 sm:top-52 sm:right-4 right-[-20px] top-[110px] h-12 aspect-square' src={Ellip}/>
+        <Image
+            alt="CicleImage"
+            className={`absolute xl:top-[-120px] lg:top-[650px] sm:scale-[0.9] z-30 ${lessThanXl&&"hidden"}`}
+            src={CicleImage}
+      />
         <h1 className='text-white text-center lg:text-[200px] sm:text-[120px] text-7xl md:py-16 md:pb-10 py-5 '>Domains</h1>
         <div className='flex md:flex-row flex-wrap w-screen justify-center mb-7'>
            {

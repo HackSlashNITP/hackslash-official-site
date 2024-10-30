@@ -41,11 +41,11 @@ function Card({ imgSrc, title, description, buttonText }) {
 
         {/* Card Content */}
         <div className="rounded-b-[10px] bg-[#223345] p-[18px] w-[369px] h-[250px]">
-          <h2 className='text-2xl mb-1'>{title}</h2>
+          <h2 className='text-2xl text-white mb-1'>{title}</h2>
           <p className='text-sm text-[#FFFFFAD5]'>
             {description}
           </p>
-          <button type="button" className="text-transparent-900 mx-9 bg-[#223345] border border-white-400 focus:outline-none font-medium rounded-2xl text-sm px-20 py-2 me-2 my-5 hover:bg-gray-700">
+          <button type="button" className="text-transparent-900 text-white mx-9 bg-[#223345] border border-white-400 focus:outline-none font-medium rounded-2xl text-sm px-20 py-2 me-2 my-5 hover:bg-gray-700">
             {buttonText}
           </button>
         </div>      
