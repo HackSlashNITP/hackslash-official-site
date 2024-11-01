@@ -43,9 +43,11 @@ const Navbar = () => {
               )}
             </div>
           ))}
+          <Link href="/#getInTouch">
           <button className='hidden md:flex leading-none text-lg xl:text-xl font-medium bg-primary px-3 md:px-3 py-1.5 md:py-1 text-black rounded-sm hover:scale-105 transition-all delay-[120] hover:bg-dark'>
             Contact Us
           </button>
+          </Link>
           
           <button className='md:hidden' onClick={toggleDropdown}>
             <div className='relative h-6 w-6'>
@@ -94,9 +96,11 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className='flex justify-center'>
-                <button className='hover:scale-105 decoration-[0.4px] transform transition-all underline underline-offset-4 justify-center items-center text-lg py-2 px-4 flex'>
+                <Link href="/#getInTouch">
+                <button className='hover:scale-105 decoration-[0.4px] transform transition-all underline underline-offset-4 justify-center items-center text-lg py-2 px-4 flex text-primary'>
                   Contact Us
                 </button>
+                </Link>
               </div>
             </div>
           )}
