@@ -2,6 +2,7 @@ import { connectToDb } from '@/lib/db';
 import React from 'react'
 import { Event } from '@/lib/models'
 import Link from 'next/link';
+import moment from 'moment';
 
 const EventsPage = async () => {
   
@@ -27,7 +28,7 @@ const EventsPage = async () => {
 
                   <div className="relative z-10 p-4 flex flex-col items-center gap-2 transition-all duration-200 group-hover:scale-110">
                     <h1 className="text-white font-semibold text-2xl">{event.title}</h1>
-                    <h2 className="text-white">{event.author.username}</h2>
+                    <h2 className="text-white">{moment(event.eventDate).format("MMMM Do YYYY")}</h2>
                     {/* <span className='text-gray-500 text-sm'>{new Date(event.createdAt).toDateString()}</span> */}
                   </div>
                 </Link>

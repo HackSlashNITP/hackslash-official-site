@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-12 text-lg">
+    <footer className="bg-black text-white py-12 text-lg z-50">
       {/* Top Border */}
       <div className="w-11/12 mx-auto border-t border-gray-700 mt-4 pt-24"></div>
 
