@@ -62,8 +62,11 @@ const Footer = () => {
             <h4 className="text-base font-semibold mb-5">Get In Touch</h4>
             <p className="mb-2 text-md hover:text-green-400 cursor-pointer">+91 123456789</p>
             <p className="mb-2 text-md hover:text-green-400 cursor-pointer">+91 123456789</p>
-            <p className="mb-2 text-md hover:text-green-400 cursor-pointer">HackSlash@nitp.ac.in</p>
-            <p className="text-md hover:text-green-400 cursor-pointer">Patna university campus,<br /> Patna, Bihar 800005</p>
+            <a href="mailto:HackSlash@nitp.ac.in" className="mb-2 text-md hover:text-green-400 cursor-pointer">
+              HackSlash@nitp.ac.in
+            </a>
+            <p className="text-md hover:text-green-400 cursor-pointer">Patna university campus,<br/> Patna, Bihar 800005
+            </p>
           </div>
         </div>
       </div>
