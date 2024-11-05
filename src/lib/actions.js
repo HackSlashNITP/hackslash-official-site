@@ -220,12 +220,12 @@ export const deleteBlog = async (id) => {
         }
         await connectToDb();
 
-        console.log(await Post.findById(id));
-        
+        await Post.findByIdAndDelete(id);
+        revalidatePath('/admin')
         return {
             success : "Blog deleted"
         }
-        // await Event.findByIdAndDelete(id);
+        
     } catch (error) {
         console.log(error);
         return {
