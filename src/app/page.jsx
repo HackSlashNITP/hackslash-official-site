@@ -1,8 +1,17 @@
 import { verifyToken } from "@/lib/actions";
 import Image from "next/image";
 import Card from "@/components/Card";
+import { connectToDb } from "@/lib/db";
+import { Event } from "@/lib/models";
 
 export default async function Home() {
+  await connectToDb();
+  const events = await Event.find().populate({
+    path: "author",
+    select: "username",
+  });
+
+  const upcomingEvents = events.filter((event) => event.eventDate > new Date());
   return (
     <main className="flex flex-col gap-4 px-4 sm:px-8 lg:px-0">
      
@@ -130,21 +139,26 @@ export default async function Home() {
 
        {/* Section 03 */}
 
-       <h3 className="text-3xl text-center font-semibold mb-6 py-8 text-gray-200">Upcoming Events</h3>
+       {/* Upcoming Events */}
+      <section className="py-6 bg-black">
+        <h3 className="text-3xl text-center font-semibold mb-6 py-8 text-gray-200">
+          Upcoming Events
+        </h3>
         <div className="grid grid-cols-1 items-center justify-center md:grid-cols-3 gap-6 px-4 md:px-20">
-        <Card title={"Delta Winter of Code"}
-            imgSrc={"/event.png"} 
-            description={"DWOC or Delta Winter of Code is a winter long program organised to support and improve the culture of open source software around us. It serves as a platform for young student developers (and even beginners!) to hone their technical skills by working on projects that tackle real world issues and are of their interests."} 
-             buttonText={"SESSION DETAILS"}/>
-              <Card title={"Delta Winter of Code"}
-            imgSrc={"/event.png"} 
-            description={"DWOC or Delta Winter of Code is a winter long program organised to support and improve the culture of open source software around us. It serves as a platform for young student developers (and even beginners!) to hone their technical skills by working on projects that tackle real world issues and are of their interests."} 
-             buttonText={"SESSION DETAILS"}/>
-              <Card title={"Delta Winter of Code"}
-            imgSrc={"/event.png"} 
-            description={"DWOC or Delta Winter of Code is a winter long program organised to support and improve the culture of open source software around us. It serves as a platform for young student developers (and even beginners!) to hone their technical skills by working on projects that tackle real world issues and are of their interests."} 
-             buttonText={"SESSION DETAILS"}/>
+          {upcomingEvents.map((event, index) => (
+            index < 3 && (
+              <Card
+              id={event._id}
+              key={event._id}
+              title={event.title}
+              imgSrc={event.images[0] || "/event.png"}
+              description={event.desc}
+              buttonText={"SESSION DETAILS"}
+            />
+            )
+          ))}
         </div>
+      </section>
 
         
         {/* Section 04 */}
