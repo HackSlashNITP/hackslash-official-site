@@ -74,6 +74,8 @@ const Footer = () => {
           <h1 className="font-bold text-xs pt-4">
             Copyright © 2024 HackSlash NITP.<br />
             All Rights Reserved.
+            <br />
+            Version : 1.0
           </h1>
         </div>
       </div>
