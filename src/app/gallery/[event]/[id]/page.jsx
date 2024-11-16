@@ -2,6 +2,8 @@ import { groupList } from "@/assets/cats";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 export default function Event({params}){
+    console.log(params);
+    
     const title=params.event.replaceAll("%20"," ")
     const index=groupList.filter(group=>group.title===title)
     if(!index){

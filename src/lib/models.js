@@ -41,6 +41,10 @@ const eventSchema = new mongoose.Schema({
     author : {
         type : mongoose.Types.ObjectId,
         ref : "User"
+    },
+    eventDate : {
+        type : Date,
+        default : Date.now()
     }
 }, {timestamps : true})
 

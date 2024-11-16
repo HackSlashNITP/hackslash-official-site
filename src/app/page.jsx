@@ -1,10 +1,19 @@
 import { verifyToken } from "@/lib/actions";
 import Image from "next/image";
 import Card from "@/components/Card";
+import { connectToDb } from "@/lib/db";
+import { Event } from "@/lib/models";
 
 export default async function Home() {
+  await connectToDb();
+  const events = await Event.find().populate({
+    path: "author",
+    select: "username",
+  });
+
+  const upcomingEvents = events.filter((event) => event.eventDate > new Date());
   return (
-    <main className="flex flex-col gap-4 px-4 sm:px-8 lg:px-16">
+    <main className="flex flex-col gap-4 px-4 sm:px-8 lg:px-0">
      
       <div className='flex flex-col w-full max-w-[1266px] mx-auto items-center space-y-10 py-8'>
 
@@ -106,8 +115,7 @@ export default async function Home() {
       </div>
         
         {/* Section 03 */}
-
-      <div className='flex flex-col w-full max-w-[1266px] mx-auto items-center space-y-10 py-8'>
+      {/* <div className='flex flex-col w-full max-w-[1266px] mx-auto items-center space-y-10 py-8'>
         <div>
           <h2 className='uppercase text-white font-normal text-6xl text-center'>Upcoming Events</h2>
         </div>
@@ -126,10 +134,36 @@ export default async function Home() {
              buttonText={"SESSION DETAILS"}/>
         </div>
 
-      </div>
+      </div> */}
+
+
+       {/* Section 03 */}
+
+       {/* Upcoming Events */}
+      <section className="py-6 bg-black">
+        <h3 className="text-3xl text-center font-semibold mb-6 py-8 text-gray-200">
+          Upcoming Events
+        </h3>
+        <div className="grid grid-cols-1 items-center justify-center md:grid-cols-3 gap-6 px-4 md:px-20">
+          {upcomingEvents.map((event, index) => (
+            index < 3 && (
+              <Card
+              id={event._id}
+              key={event._id}
+              title={event.title}
+              imgSrc={event.images[0] || "/event.png"}
+              description={event.desc}
+              buttonText={"SESSION DETAILS"}
+            />
+            )
+          ))}
+        </div>
+      </section>
+
         
         {/* Section 04 */}
-        <div className="w-11/12 mx-auto border-t border-gray-700 mt-20 "></div>
+      <div className="w-11/12 mx-auto border-t border-gray-700 mt-20 "></div>
+      <div id="getInTouch">
       <div className=' relative flex flex-col w-full max-w-[1266px] mx-auto items-center  '>
       <Image src={'/Vector.svg'} alt="circle1" height={100} width={100} className='w-[200px] h-[200px] absolute top-[350px] left-[-90px] blur-3xl ' />
       <div className="flex flex-col md:flex-row items-center justify-between md:gap-20 bg-black min-h-screen p-8">
@@ -188,7 +222,8 @@ export default async function Home() {
         />
       </div>
     </div>
-      </div>
+    </div>
+    </div>
     </main>
   );
 }

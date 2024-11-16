@@ -7,10 +7,10 @@ import React, { useEffect, useState } from 'react'
 
 const List = [
   { name: "Home", path: "/" },
-  { name: "Resources", path: "/resources" },
   { name: "Blogs", path: "/blogs" },
   { name: "Gallery", path: "/gallery" },
-  { name: "Events", path: "/events" }
+  { name: "Events", path: "/events" },
+  { name: "Website", path: "/people/developers" }
 ];
 
 const Navbar = () => {
@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className='flex justify-end col-span-2 items-center space-x-3 md:space-x-6 lg:space-x-9 xl:space-x-12 mr-[20px] sm:mr-[25px] md:mr-[30px] xl:mr-[50px]'>
           {List.map((link, index) => (
             <div key={index} className='relative hidden md:flex'>
-              <Link key={index} href={link.path} className='text-base lg:text-xl hover:text-slate-300 transition-all' onClick={() => setActive(link.path)}>
+              <Link key={index} href={link.path} className='text-base text-white lg:text-xl hover:text-slate-300 transition-all' onClick={() => setActive(link.path)}>
                 {link.name}
               </Link>
               {active === link.path && (
@@ -43,9 +43,11 @@ const Navbar = () => {
               )}
             </div>
           ))}
+          <Link href="/#getInTouch">
           <button className='hidden md:flex leading-none text-lg xl:text-xl font-medium bg-primary px-3 md:px-3 py-1.5 md:py-1 text-black rounded-sm hover:scale-105 transition-all delay-[120] hover:bg-dark'>
             Contact Us
           </button>
+          </Link>
           
           <button className='md:hidden' onClick={toggleDropdown}>
             <div className='relative h-6 w-6'>
@@ -55,7 +57,7 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className={`absolute transition-transform duration-500 ease-in-out transform ${isDropdownOpen ? 'scale-0 rotate-45 opacity-0' : 'scale-100 rotate-0 opacity-100'}`}
+                className={`absolute text-white transition-transform duration-500 ease-in-out transform ${isDropdownOpen ? 'scale-0 rotate-45 opacity-0' : 'scale-100 rotate-0 opacity-100'}`}
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
               </svg>
@@ -66,7 +68,7 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className={`absolute transition-transform duration-500 ease-in-out transform ${isDropdownOpen ? 'scale-100 rotate-0 opacity-100' : 'scale-0 rotate-45 opacity-0'}`}
+                className={`absolute text-white transition-transform duration-500 ease-in-out transform ${isDropdownOpen ? 'scale-100 rotate-0 opacity-100' : 'scale-0 rotate-45 opacity-0'}`}
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
@@ -84,7 +86,7 @@ const Navbar = () => {
                 <Link 
                   key={index} 
                   href={link.path} 
-                  className='transition-all duration-[700ms] transform hover:scale-105 decoration-[0.4px] underline underline-offset-4 justify-center items-center text-lg py-2 flex animate-slide-in'
+                  className='transition-all duration-[700ms] transform hover:scale-105 decoration-[0.4px] underline text-white underline-offset-4 justify-center items-center text-lg py-2 flex animate-slide-in'
                   style={{ animationDelay: `${index * 0.1}s` }}
                   onClick={() => {
                     setActive(link.path);
@@ -94,9 +96,11 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className='flex justify-center'>
-                <button className='hover:scale-105 decoration-[0.4px] transform transition-all underline underline-offset-4 justify-center items-center text-lg py-2 px-4 flex'>
+                <Link href="/#getInTouch">
+                <button className='hover:scale-105 decoration-[0.4px] transform transition-all underline underline-offset-4 justify-center items-center text-lg py-2 px-4 flex text-primary'>
                   Contact Us
                 </button>
+                </Link>
               </div>
             </div>
           )}

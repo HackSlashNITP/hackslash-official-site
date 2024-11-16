@@ -4,6 +4,8 @@ import { connectToDb } from "./db";
 import { Event, Post, User } from "./models";
 import bcrypt from "bcrypt"
 import jwt from 'jsonwebtoken'
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 
 // this file is for server actions
 
@@ -103,12 +105,12 @@ export const logout = async () => {
         const cookieStore = cookies()
         cookieStore.delete('token');
         return {
-            success : "Logged out !"
+            success: "Logged out !"
         }
     } catch (error) {
         console.log(error);
         return {
-            error : error.message || "Something went wrong"
+            error: error.message || "Something went wrong"
         }
     }
 }
@@ -118,93 +120,147 @@ export const verifyToken = async () => {
     try {
         const cookieStore = cookies();
         const token = cookieStore.get('token');
-        
-        if(!token?.value) {
+
+        if (!token?.value) {
             throw new Error("Not authorirzed")
         }
 
-        return new Promise((resolve,reject) => {
-            jwt.verify(token.value, process.env.JWT_SECRET, (err,payload) => {
-                if(err) reject(err);
-                // console.log(payload);
+        return new Promise((resolve, reject) => {
+            jwt.verify(token.value, process.env.JWT_SECRET, (err, payload) => {
+                if(err && err.name == "TokenExpiredError") {
+                    redirect('/login');
+                }
                 
+                if (err) reject(err);
+                
+                // console.log(payload);
+
                 resolve({
-                    isVerified : true,
-                    user : payload
+                    isVerified: true,
+                    user: payload
                 })
             })
         })
 
     } catch (error) {
-        console.log(error);
-        return {
-            isVerified : false,
-            user : null
-        }
         
+        // console.log(error);
+        return {
+            isVerified: false,
+            user: null
+        }
+
     }
 }
 
-export const createBlog = async (value,images, title) => {
+export const createBlog = async (value, images, title) => {
     try {
-    // console.log(value,images, title);
-    const data = await verifyToken();
-    if(!data.isVerified) {
-        throw new Error("Not authorized")
+        // console.log(value,images, title);
+        const data = await verifyToken();
+        if (!data.isVerified) {
+            throw new Error("Not authorized")
+        }
+
+        await connectToDb();
+        const newPost = new Post({
+            title,
+            desc: value,
+            images,
+            author: data.user.userId
+        })
+
+        await newPost.save();
+
+        return {
+            success: "Blog created successfully",
+            url: "/blogs/" + newPost._id
+        }
+
+
+    } catch (error) {
+        console.log(error);
+        return {
+            error: error.message || "Something went wrong"
+        }
     }
+}
 
-    await connectToDb();
-    const newPost = new Post({
-        title,
-        desc : value,
-        images,
-        author : data.user.userId
-    })
+export const createEvent = async (value, images, title,date) => {
+    try {
+        
+        const data = await verifyToken();
+        if (!data.isVerified) {
+            throw new Error("Not authorized")
+        }
 
-    await newPost.save();
+        await connectToDb();
+        const newEvent = new Event({
+            title,
+            desc: value,
+            images,
+            author: data.user.userId,
+            eventDate : new Date(date)
+        })
+        
 
-    return {
-        success : "Blog created successfully",
-        url : "/blogs/" + newPost._id
+        await newEvent.save();
+
+        return {
+            success: "Event created successfully",
+            url: "/events/" + newEvent._id
+        }
+
+
+    } catch (error) {
+        console.log(error);
+        return {
+            error: error.message || "Something went wrong"
+        }
     }
-    
+}
+
+export const deleteBlog = async (id) => {
+    try {
+        const data = await verifyToken();
+        if (!data.isVerified) {
+            throw new Error("Not authorized")
+        }
+        await connectToDb();
+
+        await Post.findByIdAndDelete(id);
+        revalidatePath('/admin')
+        return {
+            success : "Blog deleted"
+        }
         
     } catch (error) {
         console.log(error);
         return {
-            error : error.message || "Something went wrong"
+            error: error.message || "Something went wrong"
         }
     }
 }
 
-export const createEvent = async (value,images, title) => {
+export const deleteEvent = async (id) => {
     try {
-    // console.log(value,images, title);
-    const data = await verifyToken();
-    if(!data.isVerified) {
-        throw new Error("Not authorized")
-    }
-
-    await connectToDb();
-    const newEvent = new Event({
-        title,
-        desc : value,
-        images,
-        author : data.user.userId
-    })
-
-    await newEvent.save();
-
-    return {
-        success : "Event created successfully",
-        url : "/events/" + newEvent._id
-    }
-    
+        console.log(id);
         
+        const data = await verifyToken();
+        if (!data.isVerified) {
+            throw new Error("Not authorized")
+        }
+        await connectToDb();
+
+        await Event.findByIdAndDelete(id);
+        revalidatePath('/admin')
+        return {
+            success : "Event deleted"
+        }
+        // await Event.findByIdAndDelete(id);
     } catch (error) {
         console.log(error);
         return {
-            error : error.message || "Something went wrong"
+            error: error.message || "Something went wrong"
         }
     }
 }

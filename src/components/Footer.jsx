@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-12 text-lg">
+    <footer className="bg-black text-white py-12 text-lg z-50">
       {/* Top Border */}
       <div className="w-11/12 mx-auto border-t border-gray-700 mt-4 pt-24"></div>
 
@@ -51,6 +51,8 @@ const Footer = () => {
               <ul className="space-y-3 text-md">
                 <li><Link href="#" className="hover:text-green-400">Forum</Link></li>
                 <li><Link href="#" className="hover:text-green-400">Discord</Link></li>
+                <li><Link href="/teams" className="hover:text-green-400">Teams</Link></li>
+                <li><Link href="/admin" className="hover:text-green-400">Admin</Link></li>
               </ul>
             </div>
           </div>
@@ -72,6 +74,8 @@ const Footer = () => {
           <h1 className="font-bold text-xs pt-4">
             Copyright © 2024 HackSlash NITP.<br />
             All Rights Reserved.
+            <br />
+            Version : 1.0
           </h1>
         </div>
       </div>

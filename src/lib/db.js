@@ -9,7 +9,7 @@ export const connectToDb = async () => {
             return;
         }
 
-        const db = await mongoose.connect('mongodb+srv://harsh2005choudhari:SprrAHuvehKcxh6H@hackslashtest.phb5u.mongodb.net/?retryWrites=true&w=majority&appName=hackslashTest'); // this is hardcoded just for now | Will be changed later
+        const db = await mongoose.connect(process.env.MONGO_URL);
         console.log("New connection | Connected to DB");
         connection.isConnected = db.connections[0].readyState;
         // console.log(connection);
