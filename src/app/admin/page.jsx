@@ -117,8 +117,8 @@ const Admin = async () => {
                         <h2 className='text-3xl'>Accounts</h2>
                         <Link href={'/register'} className='text-xl px-2 bg-gray-600 rounded-xl'>Add</Link>
                     </div>
-                    <div className='h-[500px] bg-gradient-to-r from-[#662D8C] to-[#ED1E79] rounded-2xl '>
-                        <div className='p-4 flex flex-col gap-4 overflow-y-scroll'>
+                    <div className='h-[500px] bg-gradient-to-r from-[#662D8C] to-[#ED1E79] rounded-2xl overflow-y-scroll'>
+                        <div className='p-4 flex flex-col gap-4'>
                             {
                                 users.map((user) => (
                                     <div key={user._id} className='flex items-center gap-2 bg-[rgba(255,255,255,0.3)] rounded-3xl p-1'>

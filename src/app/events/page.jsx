@@ -56,18 +56,25 @@ const EventsPage = async () => {
         <h3 className="text-3xl text-center font-semibold mb-6 py-8 text-gray-200">
           Upcoming Events
         </h3>
-        <div className="grid grid-cols-1 items-center justify-center md:grid-cols-3 gap-6 px-4 md:px-20">
-          {upcomingEvents.map((event) => (
-            <Card
-              id={event._id}
-              key={event._id}
-              title={event.title}
-              imgSrc={event.images[0] || "/event.png"}
-              description={event.desc}
-              buttonText={"SESSION DETAILS"}
-            />
-          ))}
-        </div>
+        {
+          upcomingEvents.length > 0 ? (
+            <div className="grid grid-cols-1 items-center justify-center md:grid-cols-3 gap-6 px-4 md:px-20">
+              {upcomingEvents.map((event) => (
+                <Card
+                  id={event._id}
+                  key={event._id}
+                  title={event.title}
+                  imgSrc={event.images[0] || "/event.png"}
+                  description={event.desc}
+                  buttonText={"SESSION DETAILS"}
+                />
+              ))}
+            </div>
+          ) : (
+            <h1 className='text-white text-center w-full'>No Upcoming events available</h1>
+          )
+        }
+
       </section>
 
       {/* past Events */}
@@ -75,18 +82,25 @@ const EventsPage = async () => {
         <h3 className="text-3xl text-center font-semibold mb-6 py-8 text-gray-200">
           Past Events
         </h3>
-        <div className="grid grid-cols-1 items-center justify-center md:grid-cols-3 gap-6 px-4 md:px-20">
-          {pastEvents.map((event) => (
-            <Card
-              id={event._id}
-              key={event._id}
-              title={event.title}
-              imgSrc={event.images[0] || "/event.png"}
-              description={event.desc}
-              buttonText={"SESSION DETAILS"}
-            />
-          ))}
-        </div>
+        {
+          pastEvents.length > 0 ? (
+            <div className="grid grid-cols-1 items-center justify-center md:grid-cols-3 gap-6 px-4 md:px-20">
+              {pastEvents.map((event) => (
+                <Card
+                  id={event._id}
+                  key={event._id}
+                  title={event.title}
+                  imgSrc={event.images[0] || "/event.png"}
+                  description={event.desc}
+                  buttonText={"SESSION DETAILS"}
+                />
+              ))}
+            </div>
+          ) : (
+            <h1 className='text-white text-center w-full'>No Past events available</h1>
+          )
+        }
+
       </section>
     </div>
   );

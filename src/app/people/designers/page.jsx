@@ -6,39 +6,41 @@ import Link from "next/link";
 const people = [
   {
     id: 1,
-    name: "John Doe",
-    designation: "Software Engineer",
-    image: "/",
+    name: "Aditya Raj",
+    designation: "",
+    image: "/aditya.jpeg",
   },
   {
     id: 2,
-    name: "Robert Johnson",
-    designation: "Product Manager",
-    image: "/",
+    name: "Jatin Atvani",
+    designation: "",
+    image: "/jatin.jpg",
   },
   {
     id: 3,
-    name: "Jane Smith",
-    designation: "Data Scientist",
-    image: "/",
+    name: "Sandeep Kumar",
+    designation: "",
+    image: "/sandeep.jpg",
   },
+  
   {
     id: 4,
-    name: "Emily Davis",
-    designation: "UX Designer",
-    image: "/",
+    name: "Priyanshu Raj",
+    designation: "",
+    image: "/userAvatar.png",
   },
+  
   {
     id: 5,
-    name: "Tyler Durden",
-    designation: "Soap Developer",
-    image: "/",
+    name: "Palak Jaiswal",
+    designation: "",
+    image: "/userAvatar.png",
   },
   {
     id: 6,
-    name: "Dora",
-    designation: "The Explorer",
-    image: "/",
+    name: "Rahul Choudhary",
+    designation: "",
+    image: "/userAvatar.png",
   },
 ];
 

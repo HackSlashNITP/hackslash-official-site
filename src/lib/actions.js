@@ -5,6 +5,7 @@ import { Event, Post, User } from "./models";
 import bcrypt from "bcrypt"
 import jwt from 'jsonwebtoken'
 import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 
 // this file is for server actions
 
@@ -126,7 +127,12 @@ export const verifyToken = async () => {
 
         return new Promise((resolve, reject) => {
             jwt.verify(token.value, process.env.JWT_SECRET, (err, payload) => {
+                if(err && err.name == "TokenExpiredError") {
+                    redirect('/login');
+                }
+                
                 if (err) reject(err);
+                
                 // console.log(payload);
 
                 resolve({
@@ -137,7 +143,8 @@ export const verifyToken = async () => {
         })
 
     } catch (error) {
-        console.log(error);
+        
+        // console.log(error);
         return {
             isVerified: false,
             user: null
