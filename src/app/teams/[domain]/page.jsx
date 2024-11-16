@@ -119,8 +119,8 @@ const Domain = ({ params }) => {
         {teamData.name} ({teamData.domain})
       </h1>
       <div className="w-screen flex items-center lg:px-10 flex-col gap-12">
-        <TeamLeadCard teamLeadData={teamData.teamLead} />
-        <TeamCoLead teamCoLeadData={teamData.teamCoLead} />
+        {teamData.teamLead && <TeamLeadCard teamLeadData={teamData.teamLead} />}
+        {teamData.teamCoLead&&<TeamCoLead teamCoLeadData={teamData.teamCoLead} />}
       </div>
       <div className=" py-4 w-full">
         <div className="relative">
