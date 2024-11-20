@@ -14,7 +14,7 @@ import CicleImage from '../../../public/Circle.png';
 const Teams = () => {
   const TeamsData=[
     {
-      teamName:"404 Found",
+      teamName:"405 Found",
       team:"Web Team",
       image:WebTeamImage,
       url:'/teams/web'
