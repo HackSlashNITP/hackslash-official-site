@@ -6,7 +6,7 @@ export const team405Data={
       image:"/leads/SAHITYA_ARYAN.png",
       department:'Electronics and communications Department',
       domain:'Development',
-      headLine:"Any one line statement representing sir's view",
+      headLine:"Coding the web’s heartbeat, one feature at a time",
       linkedIn:'https://www.linkedin.com/in/sahityaaryan/'
     },
     teamCoLead:{
@@ -14,7 +14,7 @@ export const team405Data={
       image:"/leads/DIVYANSH_GUPTA.jpg",
       department:'Computer Science Department',
       domain:'Development',
-      headLine:"Any one line statement representing sir's view",
+      headLine:"Designing the web’s ecosystem with creativity and precision",
       linkedIn:'https://www.linkedin.com/in/divyansh-gupta-7a71b8250/'
     },
     teamMembers:[
@@ -131,7 +131,7 @@ export const team405Data={
       image:"/leads/FlutterLead.png",
       department:'Computer Science Department',
       domain:'Development',
-      headLine:"Any one line statement representing sir's view",
+      headLine:"Apps aren’t built, they’re crafted for impact",
       linkedIn:'https://www.linkedin.com/in/devendra-singh-ba1917257/github.com/dev04sa'
     },
     teamCoLead:{
@@ -139,7 +139,7 @@ export const team405Data={
       image:"/leads/FlutterCoLead.jpeg",
       department:'Computer Science Department',
       domain:'Development',
-      headLine:"Any one line statement representing sir's view",
+      headLine:"A great app is a fusion of creativity and code",
       linkedIn:'https://www.linkedin.com/in/piyuush-singh/'
     },
     teamMembers:[
@@ -208,7 +208,7 @@ export const team405Data={
       image:"/leads/CHIRAG_KUMAR.jpg",
       department:'Computer Science Department',
       domain:'Development',
-      headLine:"Any one line statement representing sir's view",
+      headLine:"Revolutionizing mobile and backend development with Kotlin power",
       linkedIn:'https://www.linkedin.com/in/chirag-kumar-rai-bbb009271?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
     }
     
@@ -222,7 +222,7 @@ export const team405Data={
       image:"/leads/SHIVA_SINGH_BAGRI.jpg",
       department:'MNC',
       domain:'Development',
-      headLine:"Any one line statement representing sir's view",
+      headLine:"Bridging the gap between algorithms and real-world applications",
       linkedIn:'https://www.linkedin.com/in/shiva-singh-bagri-060089174'
     },
     teamMembers:[
@@ -274,7 +274,7 @@ export const team405Data={
       image:"/leads/GOVIND_SINGH.jpg",
       department:'Electronics and Communications Department',
       domain:'Development',
-      headLine:"Any one line statement representing sir's view",
+      headLine:"Building decentralized solutions for a connected and secure future",
       linkedIn:'https://www.linkedin.com/in/govind-singh-a925471a1'
     },
     teamMembers:[
@@ -346,7 +346,7 @@ export const team405Data={
       image:"/leads/Bobbala_Maheedhar.jpg",
       department:'Computer Science Department',
       domain:'Development',
-      headLine:"Any one line statement representing sir's view",
+      headLine:"Cracking complexity through innovative algorithms and robust structure",
       linkedIn:'https://www.linkedin.com/in/maheedhar-bobbala-9739a1276'
     },
     teamMembers:[
