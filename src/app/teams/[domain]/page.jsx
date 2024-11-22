@@ -119,8 +119,8 @@ const Domain = ({ params }) => {
         {teamData.name} ({teamData.domain})
       </h1>
       <div className="w-screen flex items-center lg:px-10 flex-col gap-12">
-        <TeamLeadCard teamLeadData={teamData.teamLead} />
-        <TeamCoLead teamCoLeadData={teamData.teamCoLead} />
+        {teamData.teamLead && <TeamLeadCard teamLeadData={teamData.teamLead} />}
+        {teamData.teamCoLead&&<TeamCoLead teamCoLeadData={teamData.teamCoLead} />}
       </div>
       <div className=" py-4 w-full">
         <div className="relative">
@@ -145,13 +145,15 @@ const Domain = ({ params }) => {
             src={Ellip}
           />
         </div>
-        <h1 className="md:mx-10 mx-4 text-white lg:text-5xl sm:text-6xl text-4xl md:py-16 md:pb-10 lg:mb-16 mb-5 py-4">
-          Members
-        </h1>
+       {
+        teamData.teamMembers &&  <h1 className="md:mx-10 mx-4 text-white lg:text-5xl sm:text-6xl text-4xl md:py-16 md:pb-10 lg:mb-16 mb-5 py-4">
+        Members
+      </h1>
+       }
 
         <div className="overflow-hidden">
           <motion.div transition={{delay:0.5}} className="flex lg:px-12 md:px-4 flex-row flex-wrap lg:gap-x-10 md:gap-x-7 gap-x-4 gap-y-5 justify-center w-[100%]">
-            {teamData.teamMembers.map((teamMember, index) => (
+            {teamData.teamMembers && teamData.teamMembers.map((teamMember, index) => (
               <TeamMemberCard
                 key={teamMember.id}
                 translateProperty={translateProperties[index%8]}

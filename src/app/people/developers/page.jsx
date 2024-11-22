@@ -14,7 +14,7 @@ const people = [
     id: 2,
     name: "Manya Gupta",
     designation: "POC",
-    image: "/",
+    image: "/MANYA_GUPTA.png",
   },
   {
     id: 3,
@@ -75,7 +75,12 @@ const people = [
     name: "Abhijaat",
     designation: "",
     image: "/abhijaat.jpeg",
-  },
+  },{
+    id:13,
+    name:"Suryansh Verma",
+    designation: "",
+    image: "/Suryansh_Verma.jpg"
+  }
 ];
 
 function Designer() {
