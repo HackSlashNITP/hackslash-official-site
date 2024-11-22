@@ -97,7 +97,7 @@ const people = [
     linkedin:
       "https://www.linkedin.com/in/rahul-jangir-0416a928a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
-  },{
+  {
     id:13,
     name:"Suryansh Verma",
     designation: "",
