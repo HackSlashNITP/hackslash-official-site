@@ -15,8 +15,8 @@ const people = [
     id: 2,
     name: "Manya Gupta",
     designation: "POC",
-    image: "/",
     linkedin: "/#",
+    image: "/MANYA_GUPTA.png",
   },
   {
     id: 3,
@@ -97,6 +97,12 @@ const people = [
     linkedin:
       "https://www.linkedin.com/in/rahul-jangir-0416a928a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
+  },{
+    id:13,
+    name:"Suryansh Verma",
+    designation: "",
+    image: "/Suryansh_Verma.jpg"
+  }
 ];
 
 function Designer() {

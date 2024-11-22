@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 
 const List = [
   { name: "Home", path: "/" },
+  { name: "Teams", path: "/teams" },
   { name: "Blogs", path: "/blogs" },
   { name: "Gallery", path: "/gallery" },
   { name: "Events", path: "/events" },
