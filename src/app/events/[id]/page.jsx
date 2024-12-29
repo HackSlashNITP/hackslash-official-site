@@ -5,12 +5,18 @@ import DOMPurify from "isomorphic-dompurify";
 import { ImageSlider } from "@/components/image-slider";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LinkIcon from '@mui/icons-material/Link';
+import { redirect } from "next/navigation";
 
 const SingleEvent = async ({ params }) => {
   const { id } = params;
 
   await connectToDb();
-  const event = await Event.findById(id);
+  let event = null;
+  try {
+    event = await Event.findById(id);
+  }catch (err) {
+    redirect('/events');
+  }
 
   if (!event) {
     return <h1>No such event exists</h1>;

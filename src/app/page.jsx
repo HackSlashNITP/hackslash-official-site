@@ -7,7 +7,6 @@ import Link from "next/link";
 import FormComponent from "@/components/FormComponent";
 
 export default async function Home() {
-  
   await connectToDb();
   const events = await Event.find();
 
@@ -167,46 +166,48 @@ export default async function Home() {
 
       {/* Upcoming Events */}
       <section className="py-6 bg-black">
-      <div className="py-6 px-12">
-  <h2 className="text-3xl md:text-5xl font-medium text-center text-white my-8 md:my-16">
-    Upcoming Events
-  </h2>
-  <div className="flex flex-wrap justify-center gap-6 md:gap-8">
-    {upcomingEvents.length > 0 ? (
-      upcomingEvents.slice(0, 3).map((event) => ( 
-        <div
-          key={event._id}
-          className="rounded-sm overflow-hidden transform h-auto w-full sm:w-[48%] lg:w-[30%]"
-        >
-          <img
-            src={event.images[0] || "https://via.placeholder.com/400x200"}
-            alt={event.title}
-            className="w-full h-40 sm:h-56 object-cover border-t-4 border-primary"
-          />
+        <div className="py-6 px-12">
+          {upcomingEvents.length > 0 && (
+            <h2 className="text-3xl md:text-5xl font-medium text-center text-white my-8 md:my-16">
+              Upcoming Events
+            </h2>
+          )}
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+            {upcomingEvents.length > 0 &&
+              upcomingEvents.slice(0, 3).map((event) => (
+                <div
+                  key={event._id}
+                  className="rounded-sm overflow-hidden transform h-auto w-full sm:w-[48%] lg:w-[30%]"
+                >
+                  <img
+                    src={
+                      event.images[0] || "https://via.placeholder.com/400x200"
+                    }
+                    alt={event.title}
+                    className="w-full h-40 sm:h-56 object-cover border-t-4 border-primary"
+                  />
 
-          <div className="py-2 px-4 md:px-6 bg-secondary rounded-b-md hover:bg-green-400 transition-all duration-300">
-            <h1 className="text-xl md:text-2xl font-medium text-white mb-1">
-              {event.title}
-            </h1>
-            <div className="text-white text-sm">
-              {event.desc.length > 250 ? `${event.desc.slice(0, 250)}...` : event.desc}
-            </div>
-            <div className="flex justify-center">
-              <Link href={`/events/${event._id}`}>
-                <button className="w-auto bg-transparent text-white border mb-5 mt-7 rounded-lg text-sm py-1.5 px-10 md:px-14">
-                  SESSION DETAILS
-                </button>
-              </Link>
-            </div>
+                  <div className="py-2 px-4 md:px-6 bg-secondary rounded-b-md hover:bg-green-400 transition-all duration-300">
+                    <h1 className="text-xl md:text-2xl font-medium text-white mb-1">
+                      {event.title}
+                    </h1>
+                    <div className="text-white text-sm">
+                      {event.desc.length > 250
+                        ? `${event.desc.slice(0, 250)}...`
+                        : event.desc}
+                    </div>
+                    <div className="flex justify-center">
+                      <Link href={`/events/${event._id}`}>
+                        <button className="w-auto bg-transparent text-white border mb-5 mt-7 rounded-lg text-sm py-1.5 px-10 md:px-14">
+                          SESSION DETAILS
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
-      ))
-    ) : (
-      <h1 className="text-white text-center w-full">No upcoming events available</h1>
-    )}
-  </div>
-</div>
-
       </section>
 
       {/* Section 04 */}

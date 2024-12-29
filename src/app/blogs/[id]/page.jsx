@@ -4,15 +4,21 @@ import React from "react";
 import DOMPurify from "isomorphic-dompurify";
 import moment from "moment";
 import { ImageSlider } from "@/components/image-slider";
+import { redirect } from "next/navigation";
 
 const BlogPost = async ({ params }) => {
   const { id } = params;
 
   await connectToDb();
-  const post = await Post.findById(id).populate({
-    path: "author",
-    select: "username",
-  });
+  let post = null;
+  try {
+    post = await Post.findById(id).populate({
+      path: "author",
+      select: "username",
+    });
+  }catch(err) {
+    redirect('/blogs')
+  }
 
   if (!post) {
     return <h1>No such blog exists</h1>;

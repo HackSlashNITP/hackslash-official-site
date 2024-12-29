@@ -109,7 +109,7 @@ const Footer = () => {
                   </Link>
                 </li> */}
                 <li>
-                  <Link href="#" className="hover:text-green-400">
+                  <Link href="https://discord.gg/SfcsegMA" className="hover:text-green-400">
                     Discord
                   </Link>
                 </li>
