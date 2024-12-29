@@ -5,14 +5,21 @@ import Link from "next/link";
 
 const people = [
   {
-    id: 1,
+    id : 1,
+    name: "Aditi Kumari",
+    designation : "Design lead",
+    image : "/members/designers/aditi.jpg",
+    linkedin : "http://linkedin.com/in/aditi-kumari-b36023258"
+  },
+  {
+    id: 2,
     name: "Aditya Raj",
     designation: "",
     image: "/members/designers/aditya.jpeg",
     linkedin: "https://www.linkedin.com/in/adityacyan",
   },
   {
-    id: 2,
+    id: 3,
     name: "Jatin Atvani",
     designation: "",
     image: "/members/designers/jatin.jpg",
@@ -20,7 +27,7 @@ const people = [
       "https://www.linkedin.com/in/jatin-avtani-55b9b328a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
-    id: 3,
+    id: 4,
     name: "Sandeep Kumar",
     designation: "",
     image: "/members/designers/sandeep.jpg",
@@ -28,23 +35,23 @@ const people = [
   },
 
   {
-    id: 4,
+    id: 5,
     name: "Priyanshu Raj",
     designation: "",
-    image: "/staticAssets/images/userAvatar.png",
+    image: "/members/designers/priyanshu.jpg",
     linkedin: "/",
   },
 
   {
-    id: 5,
+    id: 6,
     name: "Palak Jaiswal",
     designation: "",
-    image: "/staticAssets/images/userAvatar.png",
+    image: "/members/designers/palak.jpeg",
     linkedin:
       "https://www.linkedin.com/in/palak-jaiswal-240130pj?fbclid=PAZXh0bgNhZW0CMTEAAaaAwPHAsyONoBJMcWde7W4u4Y6NrOc2r5yIbLOfu9qiFWQFipIPj2kuQc0_aem_-7ZUY_ExeN_PJOvWfsKJbg",
   },
   {
-    id: 6,
+    id: 7,
     name: "Rahul Choudhary",
     designation: "",
     image: "/staticAssets/images/userAvatar.png",

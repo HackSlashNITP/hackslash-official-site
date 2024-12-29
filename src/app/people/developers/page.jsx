@@ -29,7 +29,7 @@ const people = [
     id: 4,
     name: "Anshu Mahto",
     designation: "",
-    image: "/members/devlopers/anshu_mahto.jpg",
+    image: "/members/devlopers/anshu_mahto.JPG",
     linkedin:
       "https://www.linkedin.com/in/anshu-manoj-mahto-0abb342b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
@@ -93,12 +93,12 @@ const people = [
     id: 13,
     name: "Rahul Jangir",
     designation: "",
-    image: "/staticAssets/images/userAvatar.png",
+    image: "/members/devlopers/rahul_j.jpeg",
     linkedin:
       "https://www.linkedin.com/in/rahul-jangir-0416a928a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
-    id:13,
+    id:14,
     name:"Suryansh Verma",
     designation: "",
     image: "/Suryansh_Verma.jpg"

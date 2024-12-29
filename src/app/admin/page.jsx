@@ -15,7 +15,7 @@ const Admin = async () => {
   const events = await Event.find().populate({
     path: "author",
     select: "username",
-  });
+  });  
   const users = await User.find().select("-password");
 
   const token = await verifyToken();

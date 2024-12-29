@@ -26,7 +26,7 @@ const Footer = () => {
             </div>
             <p className="mb-4 text-md">Let's connect with our socials</p>
             <div className="flex gap-7">
-              <Link href="#">
+              <Link href="https://www.instagram.com/hackslash.nitp?igsh=MTA3d3hid2l2MmQxZw==">
                 <Image
                   src="/icons/instagram.svg"
                   alt="Instagram"
@@ -34,7 +34,7 @@ const Footer = () => {
                   height={20}
                 />
               </Link>
-              <Link href="#">
+              <Link href="https://www.linkedin.com/company/hackslash/">
                 <Image
                   src="/icons/linkedin.svg"
                   alt="LinkedIn"
@@ -42,7 +42,7 @@ const Footer = () => {
                   height={20}
                 />
               </Link>
-              <Link href="#">
+              <Link href="https://discord.gg/SfcsegMA">
                 <Image
                   src="/icons/discord.svg"
                   alt="Discord"
@@ -50,7 +50,7 @@ const Footer = () => {
                   height={20}
                 />
               </Link>
-              <Link href="#">
+              <Link href="https://youtube.com/@hackslashdevelopersclub?si=jrdTA8MQDDJVtiKR">
                 <Image
                   src="/icons/youtube.svg"
                   alt="YouTube"
@@ -58,7 +58,7 @@ const Footer = () => {
                   height={20}
                 />
               </Link>
-              <Link href="#">
+              <Link href="https://x.com/hackslash_nitp">
                 <Image
                   src="/icons/twitter-x.svg"
                   alt="Twitter"
@@ -89,34 +89,25 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link href="#" className="hover:text-green-400">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-green-400">
                     Terms and Condition
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-green-400">
-                    Sponsor us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-green-400">
-                    Contact us
-                  </Link>
+                  {/* <Link href="mailto:hackSlash@nitp.ac.in" className="hover:text-green-400"> */}
+                    <a href="mailto:hackslash@nitp.ac.in">Sponsor us</a>
+                  {/* </Link> */}
                 </li>
               </ul>
             </div>
             <div className="w-full md:w-1/2">
               <h4 className="text-base font-semibold mb-5">COMMUNITY</h4>
               <ul className="space-y-3 text-md">
-                <li>
+                {/* Forum will be added to the next update of the website */}
+                {/* <li>
                   <Link href="#" className="hover:text-green-400">
                     Forum
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link href="#" className="hover:text-green-400">
                     Discord
@@ -141,9 +132,9 @@ const Footer = () => {
             <h4 className="text-base font-semibold mb-5">Get In Touch</h4>
             {/* <p className="mb-2 text-md hover:text-green-400 cursor-pointer">+91 123456789</p>
             <p className="mb-2 text-md hover:text-green-400 cursor-pointer">+91 123456789</p> */}
-            <p className="mb-2 text-md hover:text-green-400 cursor-pointer">
+            <a href="mailto:hackslash@nitp.ac.in" className="mb-2 text-md hover:text-green-400 cursor-pointer">
               HackSlash@nitp.ac.in
-            </p>
+            </a>
             <p className="text-md hover:text-green-400 cursor-pointer">
               Patna university campus,
               <br /> Patna, Bihar 800005

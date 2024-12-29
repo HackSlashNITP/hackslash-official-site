@@ -4,8 +4,10 @@ import Card from "@/components/Card";
 import { connectToDb } from "@/lib/db";
 import { Event } from "@/lib/models";
 import Link from "next/link";
+import FormComponent from "@/components/FormComponent";
 
 export default async function Home() {
+  
   await connectToDb();
   const events = await Event.find().populate({
     path: "author",
@@ -229,12 +231,15 @@ export default async function Home() {
               </h1>
               <p className="text-2xl ">We are here for you! How can we help?</p>
 
-              <form className="space-y-5 my-10">
+              <FormComponent />
+
+              {/* <form className="space-y-5 my-10" onSubmit={onSubmit}>
                 <div>
                   <label htmlFor="name" className="block mb-2 text-lg">
                     Name
                   </label>
                   <input
+                  name="name"
                     type="text"
                     id="name"
                     className="w-full px-4 py-2 bg-transparent border border-[#ffffff] rounded-md text-white focus:outline-none ]"
@@ -246,6 +251,7 @@ export default async function Home() {
                     Email
                   </label>
                   <input
+                  name="email"
                     type="email"
                     id="email"
                     className="w-full px-4 py-2 bg-transparent border border-[#ffffff] rounded-md text-white focus:outline-none "
@@ -257,6 +263,7 @@ export default async function Home() {
                     Message
                   </label>
                   <textarea
+                  name="message"
                     id="message"
                     rows="4"
                     className="w-full px-4 py-2 bg-transparent border border-[#ffffff] rounded-md text-white focus:outline-none "
@@ -265,12 +272,13 @@ export default async function Home() {
                 </div>
 
                 <button
+
                   type="submit"
                   className="w-full px-4 py-2 bg-[#00FFC3] text-black rounded-md font-semibold hover:bg-[#00cc7d] transition"
                 >
                   Submit
                 </button>
-              </form>
+              </form> */}
             </div>
 
             {/* Right Side - Image */}
