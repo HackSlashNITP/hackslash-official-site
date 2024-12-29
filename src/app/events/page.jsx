@@ -2,128 +2,103 @@ import { connectToDb } from "@/lib/db";
 import React from "react";
 import { Event } from "@/lib/models";
 import Link from "next/link";
+import moment from "moment";
+import Card from "@/components/Card";
 
 const EventsPage = async () => {
   await connectToDb();
-  const events = await Event.find();
+  const events = await Event.find().populate({
+    path: "author",
+    select: "username",
+  });
 
   const upcomingEvents = events.filter((event) => event.eventDate > new Date());
   const pastEvents = events.filter((event) => event.eventDate <= new Date());
 
+  // console.log(blogs);
+
   return (
-    <div className="bg-black min-h-screen text-white font-sans">
+    // <section className='flex flex-col items-center noScrollbar' style={{background : 'url("/blogs-bg.jpg")', backgroundPosition : 'center', backgroundSize: 'cover', backgroundAttachment : 'fixed'}}>
+    //   <div className='flex flex-col items-center gap-4 w-full'>
+    //     <h1 className='text-4xl font-bold m-4 text-white'>Events</h1>
+    //     <div className='flex flex-wrap w-full px-8 gap-8 justify-between'>
+
+    //       {
+    //         events.length > 0 && (
+    //           events.map((event) => (
+    //             <Link href={'/events/' + event._id} key={event._id} style={{background : `url(${event.images[0] || 'https://images.pexels.com/photos/1809644/pexels-photo-1809644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'})` , backgroundPosition : 'center', backgroundSize: 'cover'}} className='relative bg-center h-[300px] w-full md:w-[45%] lg:w-[30%] rounded-md flex justify-center items-center cursor-pointer transition-all duration-200 group border border-gray-500'>
+    //               <div className="absolute inset-0 bg-black opacity-40 rounded-md transition-all duration-200 group-hover:opacity-70"></div>
+
+    //               <div className="relative z-10 p-4 flex flex-col items-center gap-2 transition-all duration-200 group-hover:scale-110">
+    //                 <h1 className="text-white font-semibold text-2xl">{event.title}</h1>
+    //                 <h2 className="text-white">{moment(event.eventDate).format("MMMM Do YYYY")}</h2>
+    //                 {/* <span className='text-gray-500 text-sm'>{new Date(event.createdAt).toDateString()}</span> */}
+    //               </div>
+    //             </Link>
+    //           ))
+    //         )
+    //       }
+
+    //     </div>
+    //   </div>
+
+    // </section>
+    <div className="bg-black  min-h-screen text-white font-sans">
       {/* Event Title */}
       <section className="relative h-screen bg-cover bg-center bg-[url('/staticAssets/images/bg.png')]">
-        <h1 className="xl:text-9xl text-7xl text-white text-center pt-60 font-bold bg-gradient-to-r from-green-300 to-lime-300 tracking-wider neon-green-text bg-clip-text ">
+        <h2 className="xl:text-9xl text-6xl text-center pt-60 font-bold text-neonGreen ">
           &lt;EVENT&gt;
-        </h1>
+        </h2>
       </section>
 
-      <section
-        className="flex flex-col items-center noScrollbar"
-        style={{
-          background: 'url("/staticAssets/images/events-bg.jpg")',
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundAttachment: "fixed",
-        }}
-      >
-        <div className="flex flex-col items-center gap-6 w-full">
-          
-        <div className="py-6 ">
-  <h2 className="text-5xl font-medium text-center text-white my-16">Upcoming Events</h2>
-  <div className="flex flex-wrap justify-center gap-8 px-40">
-    {upcomingEvents.length > 0 ? (
-      upcomingEvents.map((event, index) => (
-        <div
-          key={event._id}
-          className={`rounded-sm overflow-hidden transform h-auto  my-8 ${
-            index < 3
-              ? "w-[30%] sm:w-[30%]" // 3 items in the first row
-              : "w-[30%] sm:w-[30%] mx-4 " // 2 items in the second row
-          }`}
-        >
-          {/* Event Image */}
-          <img
-            src={event.images[0] || "https://via.placeholder.com/400x200"}
-            alt={event.title}
-            className="w-full h-56 object-cover border-t-4 border-primary"
-          />
-
-          <div className="py-2 px-6 bg-secondary rounded-b-md hover:bg-green-400 transition-all duration-300">
-            {/* Event Title */}
-            <h1 className="text-2xl font-medium text-white mb-1">{event.title}</h1>
-
-            {/* Event Description */}
-            <div className="text-white text-sm">
-              {event.desc.length > 250 ? `${event.desc.slice(0, 250)}...` : event.desc}
-            </div>
-
-            {/* Session Details Button */}
-            <div className="flex justify-center">
-              <Link href={`/events/${event._id}`}>
-                <button className="w-auto bg-transparent text-white border mb-5 mt-7 rounded-lg text-sm py-1.5 px-14">
-                  SESSION DETAILS
-                </button>
-              </Link>
-            </div>
+      {/* Upcoming Events */}
+      <section className="py-6 bg-black">
+        <h3 className="text-3xl text-center font-semibold mb-6 py-8 text-gray-200">
+          Upcoming Events
+        </h3>
+        {upcomingEvents.length > 0 ? (
+          <div className="grid grid-cols-1 items-center justify-center md:grid-cols-3 gap-6 px-4 md:px-20">
+            {upcomingEvents.map((event) => (
+              <Card
+                id={event._id}
+                key={event._id}
+                title={event.title}
+                imgSrc={event.images[0] || "/staticAssets/images/event.png"}
+                description={event.desc}
+                buttonText={"SESSION DETAILS"}
+              />
+            ))}
           </div>
-        </div>
-      ))
-    ) : (
-      <h1 className="text-white text-center w-full">No upcoming events available</h1>
-    )}
-  </div>
-</div>
+        ) : (
+          <h1 className="text-white text-center w-full">
+            No Upcoming events available
+          </h1>
+        )}
+      </section>
 
-<div>
-  <h2 className="text-5xl font-medium text-center text-white my-16">Past Events</h2>
-  <div className="flex flex-wrap justify-center gap-8 px-40">
-    {pastEvents.length > 0 ? (
-      pastEvents.map((event, index) => (
-        <div
-          key={event._id}
-          className={`rounded-sm overflow-hidden transform h-auto my-8 ${
-            index < 2
-              ? "w-[30%] sm:w-[30%] mx-4" // 2 items in the first row
-              : "w-[30%] sm:w-[30%]" // 3 items in the second row
-          }`}
-        >
-          {/* Event Image */}
-          <img
-            src={event.images[0] || "https://via.placeholder.com/400x200"}
-            alt={event.title}
-            className="w-full h-56 object-cover border-t-4 border-primary"
-          />
-
-          <div className="py-2 px-8 bg-secondary rounded-b-md hover:bg-green-400 transition-all duration-300">
-            {/* Event Title */}
-            <h1 className="text-2xl font-medium text-white mb-1">{event.title}</h1>
-
-            {/* Event Description */}
-            <div className="text-white text-sm">
-              {event.desc.length > 250 ? `${event.desc.slice(0, 250)}...` : event.desc}
-            </div>
-
-            {/* Session Details Button */}
-            <div className="flex justify-center">
-              <Link href={`/events/${event._id}`}>
-                <button className="w-auto bg-transparent text-white border mb-5 mt-7 rounded-lg text-sm py-1.5 px-14">
-                  SESSION DETAILS
-                </button>
-              </Link>
-            </div>
+      {/* past Events */}
+      <section className="py-6 bg-black">
+        <h3 className="text-3xl text-center font-semibold mb-6 py-8 text-gray-200">
+          Past Events
+        </h3>
+        {pastEvents.length > 0 ? (
+          <div className="grid grid-cols-1 items-center justify-center md:grid-cols-3 gap-6 px-4 md:px-20">
+            {pastEvents.map((event) => (
+              <Card
+                id={event._id}
+                key={event._id}
+                title={event.title}
+                imgSrc={event.images[0] || "/staticAssets/images/event.png"}
+                description={event.desc}
+                buttonText={"SESSION DETAILS"}
+              />
+            ))}
           </div>
-        </div>
-      ))
-    ) : (
-      <h1 className="text-white text-center w-full">No past events available</h1>
-    )}
-  </div>
-</div>
-
-
-        </div>
+        ) : (
+          <h1 className="text-white text-center w-full">
+            No Past events available
+          </h1>
+        )}
       </section>
     </div>
   );

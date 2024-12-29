@@ -37,15 +37,25 @@ const postSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const eventSchema = new mongoose.Schema({
-  title: { type: String, required: true, trim: true, },
-  desc: { type: String, required: true , trim: true},
-  images: { type: [String], required: false },
-  eventDate: { type: Date, required: true },
-  eventTime : {type:  Date, required: true},
-  location: { type: String, required: true },
-  registrationLink : {type: String, required : true, match: /^https?:\/\/.+\..+/i,},
-}, { timestamps: true });
+const eventSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      req: true,
+    },
+    desc: String,
+    images: [String],
+    author: {
+      type: mongoose.Types.ObjectId,
+      ref: "User",
+    },
+    eventDate: {
+      type: Date,
+      default: Date.now(),
+    },
+  },
+  { timestamps: true }
+);
 
 const User = mongoose.models?.User || mongoose.model("User", userSchema);
 const Post = mongoose.models?.Post || mongoose.model("Post", postSchema);
