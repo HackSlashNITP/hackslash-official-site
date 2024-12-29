@@ -175,49 +175,13 @@ export const createBlog = async (value, images, title) => {
             success: "Blog created successfully",
             url: "/blogs/" + newPost._id
         }
-
-
     } catch (error) {
         console.log(error);
         return {
             error: error.message || "Something went wrong"
         }
     }
-}
-
-export const createEvent = async (value, images, title,date) => {
-    try {
-        
-        const data = await verifyToken();
-        if (!data.isVerified) {
-            throw new Error("Not authorized")
-        }
-
-        await connectToDb();
-        const newEvent = new Event({
-            title,
-            desc: value,
-            images,
-            author: data.user.userId,
-            eventDate : new Date(date)
-        })
-        
-
-        await newEvent.save();
-
-        return {
-            success: "Event created successfully",
-            url: "/events/" + newEvent._id
-        }
-
-
-    } catch (error) {
-        console.log(error);
-        return {
-            error: error.message || "Something went wrong"
-        }
-    }
-}
+}  
 
 export const deleteBlog = async (id) => {
     try {
@@ -241,26 +205,58 @@ export const deleteBlog = async (id) => {
     }
 }
 
-export const deleteEvent = async (id) => {
-    try {
-        console.log(id);
-        
-        const data = await verifyToken();
-        if (!data.isVerified) {
-            throw new Error("Not authorized")
-        }
-        await connectToDb();
-
-        await Event.findByIdAndDelete(id);
-        revalidatePath('/admin')
-        return {
-            success : "Event deleted"
-        }
-        // await Event.findByIdAndDelete(id);
-    } catch (error) {
-        console.log(error);
-        return {
-            error: error.message || "Something went wrong"
-        }
+export const createEvent = async (title, desc, images, eventDate, eventTime, location, registrationLink) => {
+  try {
+    const data = await verifyToken();
+    if (!data.isVerified) {
+      throw new Error('Not authorized');
     }
-}
+
+    await connectToDb(); 
+
+    const newEvent = new Event({
+      title,
+      desc,
+      images,
+      eventDate,
+      eventTime,
+      location,
+      registrationLink,
+    });
+
+    await newEvent.save();
+
+    return {
+      success: 'Event created successfully',
+      url: '/events/' + newEvent._id,
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      error: error.message || 'Something went wrong',
+    };
+  }
+};
+
+export const deleteEvent = async (id) => {
+  try {
+    const data = await verifyToken();
+    if (!data.isVerified) {
+      throw new Error('Not authorized');
+    }
+
+    await connectToDb(); 
+
+    await Event.findByIdAndDelete(id);
+    revalidatePath('/admin')
+
+    return {
+      success: 'Event deleted',
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      error: error.message || 'Something went wrong',
+    };
+  }
+};
