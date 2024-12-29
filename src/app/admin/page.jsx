@@ -12,10 +12,7 @@ const Admin = async () => {
     path: "author",
     select: "username",
   });
-  const events = await Event.find().populate({
-    path: "author",
-    select: "username",
-  });  
+  const events = await Event.find();
   const users = await User.find().select("-password");
 
   const token = await verifyToken();
@@ -79,7 +76,7 @@ const Admin = async () => {
 
                 <div className="flex-1 min-w-0">
                   <h3 className="truncate">{event.title}</h3>
-                  <p className="text-lg">Posted by : {event.author.username}</p>
+                  {/* <p className="text-lg">Posted by : {event.author.username}</p> */}
                   <div className="flex gap-2 text-xl">
                     <Link
                       href={"/events/" + event._id}

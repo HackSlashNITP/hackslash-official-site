@@ -205,7 +205,9 @@ export const deleteBlog = async (id) => {
     }
 }
 
-export const createEvent = async (title, desc, images, eventDate, eventTime, location, registrationLink) => {
+export const createEvent = async (title, desc, images, eventDate, location, registrationLink) => {
+    console.log(title, desc, images, eventDate, location, registrationLink);
+    
   try {
     const data = await verifyToken();
     if (!data.isVerified) {
@@ -219,7 +221,6 @@ export const createEvent = async (title, desc, images, eventDate, eventTime, loc
       desc,
       images,
       eventDate,
-      eventTime,
       location,
       registrationLink,
     });

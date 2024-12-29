@@ -9,10 +9,7 @@ import FormComponent from "@/components/FormComponent";
 export default async function Home() {
   
   await connectToDb();
-  const events = await Event.find().populate({
-    path: "author",
-    select: "username",
-  });
+  const events = await Event.find();
 
   const upcomingEvents = events.filter((event) => event.eventDate > new Date());
   return (

@@ -42,9 +42,9 @@ const eventSchema = new mongoose.Schema({
   desc: { type: String, required: true , trim: true},
   images: { type: [String], required: false },
   eventDate: { type: Date, required: true },
-  eventTime : {type:  Date, required: true},
+  // eventTime : {type:  Date, required: true},
   location: { type: String, required: true },
-  registrationLink : {type: String, required : true, match: /^https?:\/\/.+\..+/i,},
+  registrationLink : {type: String, match: /^https?:\/\/.+\..+/i,},
 }, { timestamps: true });
 
 const User = mongoose.models?.User || mongoose.model("User", userSchema);
