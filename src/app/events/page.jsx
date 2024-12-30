@@ -14,7 +14,7 @@ const EventsPage = async () => {
     <div className="bg-black min-h-screen text-white font-sans">
       {/* Event Title */}
       <section className="relative h-screen bg-cover bg-center bg-[url('/staticAssets/images/bg.png')]">
-        <h1 className="xl:text-9xl text-7xl text-white text-center pt-60 font-bold bg-gradient-to-r from-green-300 to-lime-300 tracking-wider neon-green-text bg-clip-text ">
+        <h1 className="xl:text-9xl md:text-7xl text-5xl text-white text-center pt-60 font-bold bg-gradient-to-r from-green-300 to-lime-300 tracking-wider neon-green-text bg-clip-text">
           &lt;EVENT&gt;
         </h1>
       </section>
@@ -29,20 +29,16 @@ const EventsPage = async () => {
         }}
       >
         <div className="flex flex-col items-center gap-6 w-full">
-          <div className="py-6 ">
+          <div className="py-6 w-full">
             <h2 className="text-5xl font-medium text-center text-white my-16">
               Upcoming Events
             </h2>
-            <div className="flex flex-wrap justify-center gap-8 px-40">
+            <div className="flex flex-wrap justify-center gap-8 px-4 md:px-8 lg:px-40">
               {upcomingEvents.length > 0 ? (
-                upcomingEvents.map((event, index) => (
+                upcomingEvents.map((event) => (
                   <div
                     key={event._id}
-                    className={`rounded-sm overflow-hidden transform h-auto  my-8 ${
-                      index < 3
-                        ? "w-[30%] sm:w-[30%]" // 3 items in the first row
-                        : "w-[30%] sm:w-[30%] mx-4 " // 2 items in the second row
-                    }`}
+                    className="rounded-sm overflow-hidden transform h-auto my-8 w-full md:w-[45%] lg:w-[30%]"
                   >
                     {/* Event Image */}
                     <img
@@ -53,9 +49,9 @@ const EventsPage = async () => {
                       className="w-full h-56 object-cover border-t-4 border-primary"
                     />
 
-                    <div className="py-2 px-6 bg-secondary rounded-b-md hover:bg-green-400 transition-all duration-300">
+                    <div className="py-2 px-4 md:px-6 bg-secondary rounded-b-md hover:bg-green-400 transition-all duration-300">
                       {/* Event Title */}
-                      <h1 className="text-2xl font-medium text-white mb-1">
+                      <h1 className="text-xl md:text-2xl font-medium text-white mb-1">
                         {event.title}
                       </h1>
 
@@ -63,15 +59,17 @@ const EventsPage = async () => {
                       <div
                         className="text-white text-sm"
                         dangerouslySetInnerHTML={{
-                          __html: DOMPurify.sanitize(event.desc.length > 250
-                            ? `${event.desc.slice(0, 250)}...`
-                            : event.desc),
+                          __html: DOMPurify.sanitize(
+                            event.desc.length > 250
+                              ? `${event.desc.slice(0, 250)}...`
+                              : event.desc
+                          ),
                         }}
                       />
                       {/* Session Details Button */}
                       <div className="flex justify-center">
                         <Link href={`/events/${event._id}`}>
-                          <button className="w-auto bg-transparent text-white border mb-5 mt-7 rounded-lg text-sm py-1.5 px-14">
+                          <button className="w-auto bg-transparent text-white border mb-5 mt-7 rounded-lg text-sm py-1.5 px-8 md:px-14">
                             SESSION DETAILS
                           </button>
                         </Link>
@@ -87,20 +85,16 @@ const EventsPage = async () => {
             </div>
           </div>
 
-          <div>
+          <div className="w-full">
             <h2 className="text-5xl font-medium text-center text-white my-16">
               Past Events
             </h2>
-            <div className="flex flex-wrap justify-center gap-8 px-40">
+            <div className="flex flex-wrap justify-center gap-8 px-4 md:px-8 lg:px-40">
               {pastEvents.length > 0 ? (
-                pastEvents.map((event, index) => (
+                pastEvents.map((event) => (
                   <div
                     key={event._id}
-                    className={`rounded-sm overflow-hidden transform h-auto my-8 ${
-                      index < 2
-                        ? "w-[30%] sm:w-[30%] mx-4" // 2 items in the first row
-                        : "w-[30%] sm:w-[30%]" // 3 items in the second row
-                    }`}
+                    className="rounded-sm overflow-hidden transform h-auto my-8 w-full md:w-[45%] lg:w-[30%]"
                   >
                     {/* Event Image */}
                     <img
@@ -111,9 +105,9 @@ const EventsPage = async () => {
                       className="w-full h-56 object-cover border-t-4 border-primary"
                     />
 
-                    <div className="py-2 px-8 bg-secondary rounded-b-md hover:bg-green-400 transition-all duration-300">
+                    <div className="py-2 px-4 md:px-8 bg-secondary rounded-b-md hover:bg-green-400 transition-all duration-300">
                       {/* Event Title */}
-                      <h1 className="text-2xl font-medium text-white mb-1">
+                      <h1 className="text-xl md:text-2xl font-medium text-white mb-1">
                         {event.title}
                       </h1>
 
@@ -121,16 +115,18 @@ const EventsPage = async () => {
                       <div
                         className="text-white text-sm"
                         dangerouslySetInnerHTML={{
-                          __html: DOMPurify.sanitize(event.desc.length > 250
-                            ? `${event.desc.slice(0, 250)}...`
-                            : event.desc),
+                          __html: DOMPurify.sanitize(
+                            event.desc.length > 250
+                              ? `${event.desc.slice(0, 250)}...`
+                              : event.desc
+                          ),
                         }}
                       />
 
                       {/* Session Details Button */}
                       <div className="flex justify-center">
                         <Link href={`/events/${event._id}`}>
-                          <button className="w-auto bg-transparent text-white border mb-5 mt-7 rounded-lg text-sm py-1.5 px-14">
+                          <button className="w-auto bg-transparent text-white border mb-5 mt-7 rounded-lg text-sm py-1.5 px-8 md:px-14">
                             SESSION DETAILS
                           </button>
                         </Link>
