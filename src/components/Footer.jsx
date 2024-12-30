@@ -24,7 +24,7 @@ const Footer = () => {
                 />
               </Link>
             </div>
-            <p className="mb-4 text-md">Let's connect with our socials</p>
+            <p className="mb-4 text-md">Let&apos;s connect with our socials</p>
             <div className="flex gap-7">
               <Link href="https://www.instagram.com/hackslash.nitp?igsh=MTA3d3hid2l2MmQxZw==">
                 <Image
