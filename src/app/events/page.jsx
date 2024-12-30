@@ -22,7 +22,7 @@ const EventsPage = async () => {
       <section
         className="flex flex-col items-center noScrollbar"
         style={{
-          background: 'url("/staticAssets/images/events-bg.jpg")',
+          // background: 'url("/staticAssets/images/events-bg.jpg")',
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",

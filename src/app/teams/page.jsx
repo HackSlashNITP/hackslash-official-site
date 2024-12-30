@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import WebTeamImage from "../../../public/staticAssets/images/team405.jpeg";
 import FlutterTeamImage from "../../../public/staticAssets/images/flutter.png";
 import KotlinTeamImage from "../../../public/staticAssets/images/Kotlin.png";
@@ -12,6 +12,18 @@ import { TeamCard } from "@/components/TeamCard";
 import CicleImage from "../../../public/staticAssets/images/Circle.png";
 
 const Teams = () => {
+  const [lessThanXl, setLessThanXl] = useState(false);
+  
+  useEffect(() => {
+    setLessThanXl(window.innerWidth <= 914);
+    
+    const handleResize = () => {
+      setLessThanXl(window.innerWidth <= 914);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   const TeamsData = [
     {
       teamName: "405 Found",
@@ -50,7 +62,7 @@ const Teams = () => {
       url: "/teams/dsa",
     },
   ];
-  const lessThanXl = window.innerWidth <= 914;
+  // const lessThanXl = window.innerWidth <= 914;
   return (
     <div className="w-screen">
       <Image
