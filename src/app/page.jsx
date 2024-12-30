@@ -119,20 +119,20 @@ export default async function Home() {
                 </p>
               </div>
 
-              <div className="flex flex-row gap-20 mt-8">
+              <div className="flex flex-row md:gap-20 gap-10  md:mt-8 mt-6">
                 <div className="flex flex-col items-center">
-                  <div className="text-4xl font-semibold">100+</div>
-                  <div className="text-xl font-light uppercase">members</div>
+                  <div className="md:text-4xl text-3xl font-semibold">100+</div>
+                  <div className="md:text-xl text-lg font-light uppercase">members</div>
                 </div>
 
                 <div className="flex flex-col items-center">
-                  <div className="text-4xl font-semibold">10+</div>
-                  <div className="text-xl font-light uppercase">EVENTS</div>
+                  <div className="md:text-4xl text-3xl font-semibold">10+</div>
+                  <div className="md:text-xl text-lg font-light uppercase">EVENTS</div>
                 </div>
 
                 <div className="flex flex-col items-center">
-                  <div className="text-4xl font-semibold">7+</div>
-                  <div className="text-xl font-light uppercase">domains</div>
+                  <div className="md:text-4xl text-3xl font-semibold">7+</div>
+                  <div className="md:text-xl  text-lg font-light uppercase">domains</div>
                 </div>
               </div>
             </div>
