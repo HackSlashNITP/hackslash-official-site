@@ -29,100 +29,122 @@ const EventsPage = async () => {
         }}
       >
         <div className="flex flex-col items-center gap-6 w-full">
-          
-        <div className="py-6 ">
-  <h2 className="text-5xl font-medium text-center text-white my-16">Upcoming Events</h2>
-  <div className="flex flex-wrap justify-center gap-8 px-40">
-    {upcomingEvents.length > 0 ? (
-      upcomingEvents.map((event, index) => (
-        <div
-          key={event._id}
-          className={`rounded-sm overflow-hidden transform h-auto  my-8 ${
-            index < 3
-              ? "w-[30%] sm:w-[30%]" // 3 items in the first row
-              : "w-[30%] sm:w-[30%] mx-4 " // 2 items in the second row
-          }`}
-        >
-          {/* Event Image */}
-          <img
-            src={event.images[0] || "https://via.placeholder.com/400x200"}
-            alt={event.title}
-            className="w-full h-56 object-cover border-t-4 border-primary"
-          />
+          <div className="py-6 ">
+            <h2 className="text-5xl font-medium text-center text-white my-16">
+              Upcoming Events
+            </h2>
+            <div className="flex flex-wrap justify-center gap-8 px-40">
+              {upcomingEvents.length > 0 ? (
+                upcomingEvents.map((event, index) => (
+                  <div
+                    key={event._id}
+                    className={`rounded-sm overflow-hidden transform h-auto  my-8 ${
+                      index < 3
+                        ? "w-[30%] sm:w-[30%]" // 3 items in the first row
+                        : "w-[30%] sm:w-[30%] mx-4 " // 2 items in the second row
+                    }`}
+                  >
+                    {/* Event Image */}
+                    <img
+                      src={
+                        event.images[0] || "https://via.placeholder.com/400x200"
+                      }
+                      alt={event.title}
+                      className="w-full h-56 object-cover border-t-4 border-primary"
+                    />
 
-          <div className="py-2 px-6 bg-secondary rounded-b-md hover:bg-green-400 transition-all duration-300">
-            {/* Event Title */}
-            <h1 className="text-2xl font-medium text-white mb-1">{event.title}</h1>
+                    <div className="py-2 px-6 bg-secondary rounded-b-md hover:bg-green-400 transition-all duration-300">
+                      {/* Event Title */}
+                      <h1 className="text-2xl font-medium text-white mb-1">
+                        {event.title}
+                      </h1>
 
-            {/* Event Description */}
-            <div className="text-white text-sm">
-              {event.desc.length > 250 ? `${event.desc.slice(0, 250)}...` : event.desc}
-            </div>
-
-            {/* Session Details Button */}
-            <div className="flex justify-center">
-              <Link href={`/events/${event._id}`}>
-                <button className="w-auto bg-transparent text-white border mb-5 mt-7 rounded-lg text-sm py-1.5 px-14">
-                  SESSION DETAILS
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      ))
-    ) : (
-      <h1 className="text-white text-center w-full">No upcoming events available</h1>
-    )}
-  </div>
-</div>
-
-<div>
-  <h2 className="text-5xl font-medium text-center text-white my-16">Past Events</h2>
-  <div className="flex flex-wrap justify-center gap-8 px-40">
-    {pastEvents.length > 0 ? (
-      pastEvents.map((event, index) => (
-        <div
-          key={event._id}
-          className={`rounded-sm overflow-hidden transform h-auto my-8 ${
-            index < 2
-              ? "w-[30%] sm:w-[30%] mx-4" // 2 items in the first row
-              : "w-[30%] sm:w-[30%]" // 3 items in the second row
-          }`}
-        >
-          {/* Event Image */}
-          <img
-            src={event.images[0] || "https://via.placeholder.com/400x200"}
-            alt={event.title}
-            className="w-full h-56 object-cover border-t-4 border-primary"
-          />
-
-          <div className="py-2 px-8 bg-secondary rounded-b-md hover:bg-green-400 transition-all duration-300">
-            {/* Event Title */}
-            <h1 className="text-2xl font-medium text-white mb-1">{event.title}</h1>
-
-            {/* Event Description */}
-            <div className="text-white text-sm">
-              {event.desc.length > 250 ? `${event.desc.slice(0, 250)}...` : event.desc}
-            </div>
-
-            {/* Session Details Button */}
-            <div className="flex justify-center">
-              <Link href={`/events/${event._id}`}>
-                <button className="w-auto bg-transparent text-white border mb-5 mt-7 rounded-lg text-sm py-1.5 px-14">
-                  SESSION DETAILS
-                </button>
-              </Link>
+                      {/* Event Description */}
+                      <div
+                        className="text-white text-sm"
+                        dangerouslySetInnerHTML={{
+                          __html: DOMPurify.sanitize(event.desc.length > 250
+                            ? `${event.desc.slice(0, 250)}...`
+                            : event.desc),
+                        }}
+                      />
+                      {/* Session Details Button */}
+                      <div className="flex justify-center">
+                        <Link href={`/events/${event._id}`}>
+                          <button className="w-auto bg-transparent text-white border mb-5 mt-7 rounded-lg text-sm py-1.5 px-14">
+                            SESSION DETAILS
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <h1 className="text-white text-center w-full">
+                  No upcoming events available
+                </h1>
+              )}
             </div>
           </div>
-        </div>
-      ))
-    ) : (
-      <h1 className="text-white text-center w-full">No past events available</h1>
-    )}
-  </div>
-</div>
 
+          <div>
+            <h2 className="text-5xl font-medium text-center text-white my-16">
+              Past Events
+            </h2>
+            <div className="flex flex-wrap justify-center gap-8 px-40">
+              {pastEvents.length > 0 ? (
+                pastEvents.map((event, index) => (
+                  <div
+                    key={event._id}
+                    className={`rounded-sm overflow-hidden transform h-auto my-8 ${
+                      index < 2
+                        ? "w-[30%] sm:w-[30%] mx-4" // 2 items in the first row
+                        : "w-[30%] sm:w-[30%]" // 3 items in the second row
+                    }`}
+                  >
+                    {/* Event Image */}
+                    <img
+                      src={
+                        event.images[0] || "https://via.placeholder.com/400x200"
+                      }
+                      alt={event.title}
+                      className="w-full h-56 object-cover border-t-4 border-primary"
+                    />
 
+                    <div className="py-2 px-8 bg-secondary rounded-b-md hover:bg-green-400 transition-all duration-300">
+                      {/* Event Title */}
+                      <h1 className="text-2xl font-medium text-white mb-1">
+                        {event.title}
+                      </h1>
+
+                      {/* Event Description */}
+                      <div
+                        className="text-white text-sm"
+                        dangerouslySetInnerHTML={{
+                          __html: DOMPurify.sanitize(event.desc.length > 250
+                            ? `${event.desc.slice(0, 250)}...`
+                            : event.desc),
+                        }}
+                      />
+
+                      {/* Session Details Button */}
+                      <div className="flex justify-center">
+                        <Link href={`/events/${event._id}`}>
+                          <button className="w-auto bg-transparent text-white border mb-5 mt-7 rounded-lg text-sm py-1.5 px-14">
+                            SESSION DETAILS
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <h1 className="text-white text-center w-full">
+                  No past events available
+                </h1>
+              )}
+            </div>
+          </div>
         </div>
       </section>
     </div>

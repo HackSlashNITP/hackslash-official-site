@@ -11,7 +11,7 @@ const FormComponent = () => {
 
     // console.log(process.env.FORM_API_KEY);
     
-    formData.append("access_key", "2b22bf11-b550-45b9-9623-5e0d74ae2055"); // hardcoded for now
+    formData.append("access_key", "db4cb54c-6ef3-4acd-9aae-fe5c892b0ab4"); // hardcoded for now
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
