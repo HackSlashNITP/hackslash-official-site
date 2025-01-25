@@ -20,7 +20,7 @@ const CreateBlog = () => {
   const [loading, setLoading] = useState(true);
   const {user} = useContext(UserContext);
 
-  useEffect(() => {;
+  useEffect(() => {
     if(user == undefined) {
       return;
     }
