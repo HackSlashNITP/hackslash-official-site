@@ -287,19 +287,17 @@ export default async function Home() {
 
       {/*Coordinators Section*/}
       <div className="bg-black min-h-screen flex flex-col items-center">
-        <h1 className="text-white text-6xl font-bold mb-12">
-          OUR COORDINATORS
-        </h1>
-        <div className="grid gap-40 mt-20">
-          {/*First Row:2 Cards*/}
-          <div className="flex justify-center space-x-20 mb-15">
+        <h1 className="text-white text-6xl font-bold mb-12">OFFICE BEARERS</h1>
+        <div className="grid gap-10 sm:gap-40 mt-10 sm:mt-20">
+          {/* First Row: 1-2 Cards on Mobile, 2 Cards on Larger Screens */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-20 justify-center">
             {coordinators.slice(0, 2).map((coordinator, index) => (
               <CoordinatorCard key={index} {...coordinator} />
             ))}
           </div>
 
-          {/*Subsequent Rows:4 Cards*/}
-          <div className="grid grid-cols-4 gap-x-11 gap-y-40 justify-center">
+          {/* Subsequent Rows: 2 Columns on Mobile, 4 Columns on Larger Screens */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-5 sm:gap-x-11 gap-y-20 sm:gap-y-40 justify-center">
             {coordinators.slice(2).map((coordinator, index) => (
               <CoordinatorCard key={index + 2} {...coordinator} />
             ))}
