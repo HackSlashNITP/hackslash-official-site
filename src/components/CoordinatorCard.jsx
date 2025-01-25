@@ -23,6 +23,7 @@ const CoordinatorCard = ({ name, role, image, linkedin, github }) => {
       </div>
 
       <div className="flex items-center justify-center mt-2 space-x-5">
+        <div>
         {github && (
           <a 
             href={github} 
@@ -37,8 +38,11 @@ const CoordinatorCard = ({ name, role, image, linkedin, github }) => {
             />
           </a>
         )}
-        <p className="text-base sm:text-xl">{role || "Role"}</p>
-        {linkedin && (
+        </div>
+        <div className="flex flex-col">
+        {role.map((ele)=><p key={ele} className="text-center text-lg  sm:text-xl">{"->"}{ele || "Role"}</p>)}
+        </div>
+        <div>{linkedin && (
           <a 
             href={linkedin} 
             target="_blank" 
@@ -51,7 +55,7 @@ const CoordinatorCard = ({ name, role, image, linkedin, github }) => {
               className="w-5 h-5 sm:w-6 sm:h-6 filter invert" 
             />
           </a>
-        )}
+        )}</div>
       </div>
     </div>
   );
