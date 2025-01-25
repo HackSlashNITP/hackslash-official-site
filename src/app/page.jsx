@@ -159,7 +159,14 @@ export default async function Home() {
             description={"DWOC or Delta Winter of Code is a winter long program organised to support and improve the culture of open source software around us. It serves as a platform for young student developers (and even beginners!) to hone their technical skills by working on projects that tackle real world issues and are of their interests."} 
              buttonText={"SESSION DETAILS"}/>
               <Card title={"Delta Winter of Code"}
+            imgSrc={"/event.png"} -normal text-6xl text-center'>Upcoming Events</h2>
+        </div>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
+          <Card title={"Delta Winter of Code"}
             imgSrc={"/event.png"} 
+            description={"DWOC or Delta Winter of Code is a winter long program organised to support and improve the culture of open source software around us. It serves as a platform for young student developers (and even beginners!) to hone their technical skills by working on projects that tackle real world issues and are of their interests."} 
+             buttonText={"SESSION DETAILS"}/>
+              <Card title={"Delta Winter of Code"}
             description={"DWOC or Delta Winter of Code is a winter long program organised to support and improve the culture of open source software around us. It serves as a platform for young student developers (and even beginners!) to hone their technical skills by working on projects that tackle real world issues and are of their interests."} 
              buttonText={"SESSION DETAILS"}/>
               <Card title={"Delta Winter of Code"}
@@ -238,53 +245,6 @@ export default async function Home() {
               <p className="text-2xl ">We are here for you! How can we help?</p>
 
               <FormComponent />
-
-              {/* <form className="space-y-5 my-10" onSubmit={onSubmit}>
-                <div>
-                  <label htmlFor="name" className="block mb-2 text-lg">
-                    Name
-                  </label>
-                  <input
-                  name="name"
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-2 bg-transparent border border-[#ffffff] rounded-md text-white focus:outline-none ]"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block mb-2 text-lg">
-                    Email
-                  </label>
-                  <input
-                  name="email"
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-2 bg-transparent border border-[#ffffff] rounded-md text-white focus:outline-none "
-                    placeholder="Your email"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block mb-2 text-lg">
-                    Message
-                  </label>
-                  <textarea
-                  name="message"
-                    id="message"
-                    rows="4"
-                    className="w-full px-4 py-2 bg-transparent border border-[#ffffff] rounded-md text-white focus:outline-none "
-                    placeholder="Your message"
-                  />
-                </div>
-
-                <button
-
-                  type="submit"
-                  className="w-full px-4 py-2 bg-[#00FFC3] text-black rounded-md font-semibold hover:bg-[#00cc7d] transition"
-                >
-                  Submit
-                </button>
-              </form> */}
             </div>
 
             {/* Right Side - Image */}

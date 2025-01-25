@@ -24,7 +24,7 @@ const Admin = async () => {
     "use server";
     try {
       const data = await deleteEvent(formData);
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       console.log(error);
     }
