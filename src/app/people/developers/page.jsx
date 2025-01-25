@@ -8,7 +8,7 @@ const people = [
     id: 1,
     name: "Vasu Choudhari",
     designation: "POC",
-    image: "/members/devlopers/vasu.jfif",
+    image: "/members/devlopers/vasu.jpeg",
     linkedin: "/#",
   },
   {

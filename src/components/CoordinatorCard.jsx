@@ -5,7 +5,7 @@ const CoordinatorCard = ({ name, role, image, linkedin, github }) => {
     <div className="relative bg-[#00ffc3] text-black rounded-xl shadow-lg w-64 p-4 flex flex-col items-center">
       <div className="absolute -top-[90px] w-[170px] h-[185px] bg-gray-300 overflow-hidden rounded-xl">
         {image ? (
-          <Image src={image} alt={`Profile picture of ${name}`} layout="fill" objectFit="cover" />
+          <Image src={image} alt={`Profile picture of ${name}`} style={'object-cover'} fill />
         ) : (
           <p className="text-gray-500 text-sm flex items-center justify-center h-full">Add photo here</p>
         )}

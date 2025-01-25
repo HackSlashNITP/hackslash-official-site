@@ -7,67 +7,73 @@ import Link from "next/link";
 import FormComponent from "@/components/FormComponent";
 import CoordinatorCard from "@/components/CoordinatorCard";
 
-
 const coordinators = [
-  {name: "Abdul SHUBHAN", 
-  role: "Lead",
-   image: "/leads/SAHITYA_ARYAN.png", 
-   linkedin: "https://www.linkedin.com/in/sahityaaryan/",
-    github: "#" 
+  {
+    name: "Abdul SHUBHAN",
+    role: "Lead",
+    image: "/leads/Subhan.jpeg",
+    linkedin: "https://www.linkedin.com/in/abdulsubhan12/",
+    github: "#",
   },
-  {name: "Sahitya Aryan", 
+  {
+    name: "Sahitya Aryan",
     role: "Web Lead",
-     image: "/leads/SAHITYA_ARYAN.png", 
-     linkedin: "https://www.linkedin.com/in/sahityaaryan/",
-      github: "#" 
-    },
-    {name: "Divyansh Gupta", 
-      role: "Web Co-Lead",
-       image: "/leads/DIVYANSH_GUPTA.JPg", 
-       linkedin: "https://www.linkedin.com/in/divyansh-gupta-7a71b8250/",
-        github: "#" 
-      },
-      {name: "Devendra Singh", 
-        role: "Flutter Lead",
-        image: "/leads/FlutterLead.png", 
-        linkedin: "https://www.linkedin.com/in/devendra-singh-ba1917257/github.com/dev04sa",
-        github: "#" 
-      },
-      {name: "Piyush Singh", 
-        role: " Flutter Co-Lead",
-         image: "/leads/FlutterCoLead.jpeg", 
-         linkedin: "https://www.linkedin.com/in/piyuush-singh/",
-          github: "#" 
-        },
-      {name: "Chirag Kumar", 
-            role: "Kotlin Lead",
-             image: "/leads/CHIRAG_KUMAR.jpg", 
-             linkedin: "https://www.linkedin.com/in/chirag-kumar-rai-bbb009271?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-              github: "#" 
-            },
-            {name: "Shiva Singh Begari", 
-              role: "AI/ML Lead",
-               image: "/leads/SHIVA_SINGH_BAGRI.jpg", 
-               linkedin: "https://www.linkedin.com/in/shiva-singh-bagri-060089174",
-                github: "#" 
-              },
-              {name: "Govind Singh", 
-                role: "Blockchain ",
-                 image: "/leads/GOVIND_SINGH.jpg", 
-                 linkedin: "https://www.linkedin.com/in/govind-singh-a925471a1",
-                  github: "#" 
-                },
-                {name: "Bobbala Maheedhar", 
-                  role: "SigSTP Lead",
-                   image: "/leads/Bobbala_Maheedhar.jpg", 
-                   linkedin: "https://www.linkedin.com/in/maheedhar-bobbala-9739a1276/",
-                    github: "#" 
-                  },
-                 
-                        
-      
-]
-
+    image: "/leads/SAHITYA_ARYAN.png",
+    linkedin: "https://www.linkedin.com/in/sahityaaryan/",
+    github: "#",
+  },
+  {
+    name: "Divyansh Gupta",
+    role: "Web Co-Lead",
+    image: "/leads/DIVYANSH_GUPTA.jpg",
+    linkedin: "https://www.linkedin.com/in/divyansh-gupta-7a71b8250/",
+    github: "#",
+  },
+  {
+    name: "Devendra Singh",
+    role: "Flutter Lead",
+    image: "/leads/FlutterLead.png",
+    linkedin:
+      "https://www.linkedin.com/in/devendra-singh-ba1917257/github.com/dev04sa",
+    github: "#",
+  },
+  {
+    name: "Piyush Singh",
+    role: " Flutter Co-Lead",
+    image: "/leads/FlutterCoLead.jpeg",
+    linkedin: "https://www.linkedin.com/in/piyuush-singh/",
+    github: "#",
+  },
+  {
+    name: "Chirag Kumar",
+    role: "Kotlin Lead",
+    image: "/leads/CHIRAG_KUMAR.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/chirag-kumar-rai-bbb009271?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "#",
+  },
+  {
+    name: "Shiva Singh Begari",
+    role: "AI/ML Lead",
+    image: "/leads/SHIVA_SINGH_BAGRI.jpg",
+    linkedin: "https://www.linkedin.com/in/shiva-singh-bagri-060089174",
+    github: "#",
+  },
+  {
+    name: "Govind Singh",
+    role: "Blockchain ",
+    image: "/leads/GOVIND_SINGH.jpg",
+    linkedin: "https://www.linkedin.com/in/govind-singh-a925471a1",
+    github: "#",
+  },
+  {
+    name: "Bobbala Maheedhar",
+    role: "SigSTP Lead",
+    image: "/leads/Bobbala_Maheedhar.jpg",
+    linkedin: "https://www.linkedin.com/in/maheedhar-bobbala-9739a1276/",
+    github: "#",
+  },
+];
 
 export default async function Home() {
   await connectToDb();
@@ -185,17 +191,23 @@ export default async function Home() {
               <div className="flex flex-row md:gap-20 gap-10  md:mt-8 mt-6">
                 <div className="flex flex-col items-center">
                   <div className="md:text-4xl text-3xl font-semibold">100+</div>
-                  <div className="md:text-xl text-lg font-light uppercase">members</div>
+                  <div className="md:text-xl text-lg font-light uppercase">
+                    members
+                  </div>
                 </div>
 
                 <div className="flex flex-col items-center">
                   <div className="md:text-4xl text-3xl font-semibold">10+</div>
-                  <div className="md:text-xl text-lg font-light uppercase">EVENTS</div>
+                  <div className="md:text-xl text-lg font-light uppercase">
+                    EVENTS
+                  </div>
                 </div>
 
                 <div className="flex flex-col items-center">
                   <div className="md:text-4xl text-3xl font-semibold">7+</div>
-                  <div className="md:text-xl  text-lg font-light uppercase">domains</div>
+                  <div className="md:text-xl  text-lg font-light uppercase">
+                    domains
+                  </div>
                 </div>
               </div>
             </div>
@@ -273,30 +285,27 @@ export default async function Home() {
         </div>
       </section>
 
+      {/*Coordinators Section*/}
+      <div className="bg-black min-h-screen flex flex-col items-center">
+        <h1 className="text-white text-6xl font-bold mb-12">
+          OUR COORDINATORS
+        </h1>
+        <div className="grid gap-40 mt-20">
+          {/*First Row:2 Cards*/}
+          <div className="flex justify-center space-x-20 mb-15">
+            {coordinators.slice(0, 2).map((coordinator, index) => (
+              <CoordinatorCard key={index} {...coordinator} />
+            ))}
+          </div>
 
-
-       {/*Coordinators Section*/}
-       <div className="bg-black min-h-screen flex flex-col items-center">
-       <h1 className="text-white text-6xl font-bold mb-12">OUR COORDINATORS</h1>
-          <div className="grid gap-40 mt-20">
-    {/*First Row:2 Cards*/}
-             <div className="flex justify-center space-x-20 mb-15"> 
-               {coordinators.slice(0,2).map((coordinator, index) => (
-                  <CoordinatorCard key={index}{...coordinator}/>
-                     ))}
-                </div>
-
-    {/*Subsequent Rows:4 Cards*/}
-                   <div className="grid grid-cols-4 gap-x-11 gap-y-40 justify-center">
-                    {coordinators.slice(2).map((coordinator, index) => (
-                      <CoordinatorCard key={index + 2}{...coordinator}/>
-                              ))}
-                     </div>
-               </div>
-            </div>
-
-
-
+          {/*Subsequent Rows:4 Cards*/}
+          <div className="grid grid-cols-4 gap-x-11 gap-y-40 justify-center">
+            {coordinators.slice(2).map((coordinator, index) => (
+              <CoordinatorCard key={index + 2} {...coordinator} />
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* Section 04 */}
       <div className="w-11/12 mx-auto border-t border-gray-700 mt-20 "></div>
