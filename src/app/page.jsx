@@ -1,18 +1,18 @@
 import { verifyToken } from "@/lib/actions";
 import Image from "next/image";
 import Card from "@/components/Card";
-// import { connectToDb } from "@/lib/db";
-// import { Event } from "@/lib/models";
+import { connectToDb } from "@/lib/db";
+import { Event } from "@/lib/models";
 import Link from "next/link";
 import FormComponent from "@/components/FormComponent";
 import CoordinatorCard from "@/components/CoordinatorCard";
 
 
 export default async function Home() {
-  // await connectToDb();
-  // const events = await Event.find();
+  await connectToDb();
+  const events = await Event.find();
 
-  // const upcomingEvents = events.filter((event) => event.eventDate > new Date());
+  const upcomingEvents = events.filter((event) => event.eventDate > new Date());
   return (
     <main className="flex flex-col gap-4 px-4 sm:px-8 lg:px-0">
       <div className="flex flex-col w-full max-w-[1266px] mx-auto items-center space-y-10 py-8">
