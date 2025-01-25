@@ -297,7 +297,7 @@ export default async function Home() {
           </div>
 
           {/* Subsequent Rows: 2 Columns on Mobile, 4 Columns on Larger Screens */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-5 sm:gap-x-11 gap-y-20 sm:gap-y-40 justify-center">
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-x-5 sm:gap-x-11 gap-y-20 sm:gap-y-40 justify-center">
             {coordinators.slice(2).map((coordinator, index) => (
               <CoordinatorCard key={index + 2} {...coordinator} />
             ))}
