@@ -19,7 +19,7 @@ const Login = () => {
         localStorage.setItem('user', data.user) // setting up the user in localstorage | we cannot accesss localStorage in 
         setUser((prev) => JSON.parse(data.user))
       }
-      console.log("Loggin");
+      // console.log("Loggin");
       return router.push('/admin');
 
     } catch (error) {

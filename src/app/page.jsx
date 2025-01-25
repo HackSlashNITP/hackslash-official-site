@@ -287,7 +287,7 @@ export default async function Home() {
 
       {/*Coordinators Section*/}
       <div className="bg-black min-h-screen flex flex-col items-center">
-        <h1 className="text-white text-6xl font-bold mb-12">OFFICE BEARERS</h1>
+        <h1 className="text-white text-6xl font-bold mb-12 text-center">OFFICE BEARERS</h1>
         <div className="grid gap-10 sm:gap-40 mt-10 sm:mt-20">
           {/* First Row: 1-2 Cards on Mobile, 2 Cards on Larger Screens */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-20 justify-center">

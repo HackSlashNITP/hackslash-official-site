@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const CoordinatorCard = ({ name, role, image, linkedin, github }) => {
   return (
-    <div className="relative bg-[#00ffc3] text-black rounded-xl shadow-lg w-full max-w-[300px] mx-auto p-4 flex flex-col items-center">
+    <div className="relative bg-[#00ffc3] text-black rounded-xl shadow-lg w-full max-w-[300px] mx-auto p-4 my-4 flex flex-col items-center">
       <div className="absolute -top-[50px] sm:-top-[90px] w-[120px] sm:w-[170px] h-[130px] sm:h-[185px] bg-gray-300 overflow-hidden rounded-xl">
         {image ? (
           <Image 
