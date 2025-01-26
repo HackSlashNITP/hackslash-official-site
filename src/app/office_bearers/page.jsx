@@ -25,7 +25,7 @@ const OfficeBearers = () => {
         },
         {
             name: "Abhinav Singh",
-            role: ["Administrative Lead"],
+            role: ["Admin Lead"],
             image: "/leads/ABHINAV_SINGH.jpeg",
             linkedin: "https://www.linkedin.com/in/abhinavs13",
             github: " https://github.com/Abhinav1341",
@@ -56,7 +56,7 @@ const OfficeBearers = () => {
             role: ["Web Co-Lead"],
             image: "/leads/DIVYANSH_GUPTA.jpg",
             linkedin: "https://www.linkedin.com/in/divyansh-gupta-7a71b8250/",
-            github: "https://github.com/divyansh12git",
+            github: "https://github.com/divy@/lib/db"
         },
         {
             name: "Rai Chirag Kumar",
