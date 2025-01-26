@@ -25,7 +25,7 @@ const OfficeBearers = () => {
         },
         {
             name: "Abhinav Singh",
-            role: ["Admin Lead"],
+            role: ["Adminstrative Lead"],
             image: "/leads/ABHINAV_SINGH.jpeg",
             linkedin: "https://www.linkedin.com/in/abhinavs13",
             github: " https://github.com/Abhinav1341",
@@ -34,7 +34,7 @@ const OfficeBearers = () => {
             name: "Devendra Singh",
             role: ["Technical Lead", "Flutter Lead"],
             image: "/leads/FlutterLead.png",
-            linkedin: "https://www.linkedin.com/in/devendra-singh-ba1917257/github.com/dev04sa",
+            linkedin: "https://www.linkedin.com/in/devendra-singh-ba1917257",
             github: "https://github.com/dev04sa",
         },
         {

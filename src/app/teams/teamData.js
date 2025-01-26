@@ -137,7 +137,7 @@ export const team405Data={
     teamCoLead:{
       name:'Piyush Singh',
       image:"/leads/FlutterCoLead.jpeg",
-      department:'Computer Science Department',
+      department:'Electronics and communications Department',
       domain:'Development',
       headLine:"A great app is a fusion of creativity and code",
       linkedIn:'https://www.linkedin.com/in/piyuush-singh/'

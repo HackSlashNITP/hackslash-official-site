@@ -12,7 +12,7 @@ const List = [
   { name: "Gallery", path: "/gallery" },
   { name: "Events", path: "/events" },
   { name: "Website", path: "/people/developers" },
-  { name: "Office Bearers", path: "/office_bearers" },
+  { name: "Office", path: "/office" },
 ];
 
 const Navbar = () => {

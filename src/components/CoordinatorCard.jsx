@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io";  
+import { FaCircle } from "react-icons/fa";
 
 const CoordinatorCard = ({ name, role, image, linkedin, github }) => {
   return (
@@ -22,8 +24,10 @@ const CoordinatorCard = ({ name, role, image, linkedin, github }) => {
         <h3 className="text-lg sm:text-xl mt-5">{name || "Name"}</h3>
       </div>
 
-      <div className="flex items-center justify-center mt-2 space-x-5">
-        <div>
+      <div className="flex flex-col items-center justify-center my-2 space-x-5 ">
+       <div className="flex w-[56px] my-4 ">
+
+       <div className="flex justify-between w-full">
         {github && (
           <a 
             href={github} 
@@ -31,31 +35,44 @@ const CoordinatorCard = ({ name, role, image, linkedin, github }) => {
             rel="noopener noreferrer" 
             aria-label={`${name}'s GitHub`}
           >
-            <img 
-              src="icons/github.svg" 
-              alt="GitHub" 
-              className="w-5 h-5 sm:w-6 sm:h-6" 
-            />
+            <IoLogoGithub className="w-5 h-5 sm:w-6 sm:h-6"/>
+              {/*  className="w-5 h-5 sm:w-6 sm:h-6" */}
           </a>
         )}
         </div>
-        <div className="flex flex-col">
-        {role.map((ele)=><p key={ele} className="text-center text-lg  sm:text-xl">{"->"}{ele || "Role"}</p>)}
-        </div>
-        <div>{linkedin && (
+
+        <div>
+          {linkedin && (
           <a 
             href={linkedin} 
             target="_blank" 
             rel="noopener noreferrer" 
             aria-label={`${name}'s LinkedIn`}
           >
-            <img 
-              src="icons/linkedin.svg" 
-              alt="LinkedIn" 
-              className="w-5 h-5 sm:w-6 sm:h-6 filter invert" 
-            />
+            <IoLogoLinkedin className="w-5 h-5 sm:w-6 sm:h-6 "/>
+              {/* className="w-5 h-5 sm:w-6 sm:h-6 filter invert"  */}
           </a>
         )}</div>
+       </div>
+
+
+        {/* <div className="flex flex-col ">
+        {role.map((ele)=><FaCircle size={3} >
+              <p key={ele} className="text-center text-lg  sm:text-xl">{ele || "Role"}</p><FaCircle/>)}
+        </div> */}
+        <div className="flex flex-col ">
+        {
+          role.map((ele)=>{
+
+            return (
+              // <div className=" bg-red-600">
+              <p key={ele} name={ele} className="text-center text-lg sm:text-md">{ele || "Role"}</p>
+              // </div>
+            )
+          })
+        }
+        </div>
+        
       </div>
     </div>
   );

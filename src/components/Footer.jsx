@@ -70,36 +70,15 @@ const Footer = () => {
           </div>
 
           {/* Middle Section */}
-          <div className="flex flex-col items-center md:items-start md:flex-row md:space-x-16 mb-8 md:mb-0 w-full md:w-2/3">
-            <div className="mb-8 md:mb-0 w-full md:w-1/2">
+          <div className="flex flex-col items-center md:items-start md:flex-row md:space-x-16 mb-8 md:mb-0 w-full md:w-2/3 pl-4">
+            {/* <div className="mb-8 md:mb-0 w-full md:w-1/2">
               <h4 className="text-base font-semibold mb-5">Useful Links</h4>
               <ul className="space-y-3 text-md">
-                <li>
-                  <Link
-                    href="https://www.linkedin.com/company/hackslash/"
-                    className="hover:text-green-400"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-green-400">
-                    Support
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-green-400">
-                    Terms and Condition
-                  </Link>
-                </li>
-                <li>
-                  {/* <Link href="mailto:hackSlash@nitp.ac.in" className="hover:text-green-400"> */}
-                    <a href="mailto:hackslash@nitp.ac.in">Sponsor us</a>
-                  {/* </Link> */}
-                </li>
+
+               
               </ul>
-            </div>
-            <div className="w-full md:w-1/2">
+            </div> */}
+            <div className="w-full md:w-1/2 flex flex-col items-center">
               <h4 className="text-base font-semibold mb-5">COMMUNITY</h4>
               <ul className="space-y-3 text-md">
                 {/* Forum will be added to the next update of the website */}
@@ -114,8 +93,8 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/office_bearers" className="hover:text-green-400">
-                    Office Bearers
+                  <Link href="/office" className="hover:text-green-400">
+                    Office 
                   </Link>
                 </li>
                 <li>
@@ -123,6 +102,9 @@ const Footer = () => {
                     Teams
                   </Link>
                 </li>
+                <li>
+                    <a href="mailto:hackslash@nitp.ac.in">Sponsor us</a>
+                </li> 
                 <li>
                   <Link href="/admin" className="hover:text-green-400">
                     Admin
@@ -133,7 +115,7 @@ const Footer = () => {
           </div>
 
           {/* Right Section */}
-          <div className="w-full md:w-1/4 mt-8 md:mt-0">
+          <div className="w-full md:w-1/4 mt-8 md:mt-0 ">
             <h4 className="text-base font-semibold mb-5">Get In Touch</h4>
             {/* <p className="mb-2 text-md hover:text-green-400 cursor-pointer">+91 123456789</p>
             <p className="mb-2 text-md hover:text-green-400 cursor-pointer">+91 123456789</p> */}
@@ -141,8 +123,8 @@ const Footer = () => {
               HackSlash@nitp.ac.in
             </a>
             <p className="text-md hover:text-green-400 cursor-pointer">
-              Patna university campus,
-              <br /> Patna, Bihar 800005
+              NIT Patna BIHTA Campus,
+              <br /> Patna, Bihta 801103 
             </p>
           </div>
         </div>
