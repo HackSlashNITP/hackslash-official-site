@@ -38,6 +38,13 @@ const OfficeBearers = () => {
             github: "https://github.com/dev04sa",
         },
         {
+            name: "Komal Kumari",
+            role: ["Content and Social Media Lead"],
+            image: "/leads/Komal_Kumari.jpg",
+            linkedin: "https://www.linkedin.com/in/komal-kumari-79234a258/",
+            github: "#",
+        },
+        {
             name: "Sahitya Aryan",
             role: ["Web Lead"],
             image: "/leads/SAHITYA_ARYAN.png",
@@ -80,13 +87,7 @@ const OfficeBearers = () => {
             linkedin: "https://www.linkedin.com/in/maheedhar-bobbala-9739a1276/",
             github: " https://github.com/maheedhar20",
         },
-        {
-            name: "Komal Kumari",
-            role: ["Content and Social Media Lead"],
-            image: "/leads/Komal_Kumari.jpg",
-            linkedin: "https://www.linkedin.com/in/komal-kumari-79234a258/",
-            github: "#",
-        },
+        
     ];
 
     useEffect(() => {
