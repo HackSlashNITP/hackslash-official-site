@@ -1,11 +1,9 @@
 import { verifyToken } from "@/lib/actions";
 import Image from "next/image";
-import Card from "@/components/Card";
 import { connectToDb } from "@/lib/db";
 import { Event } from "@/lib/models";
 import Link from "next/link";
 import FormComponent from "@/components/FormComponent";
-import CoordinatorCard from "@/components/CoordinatorCard";
 
 
 export default async function Home() {
