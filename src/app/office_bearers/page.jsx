@@ -42,7 +42,7 @@ const OfficeBearers = () => {
             role: ["Content and Social Media Lead"],
             image: "/leads/Komal_Kumari.jpg",
             linkedin: "https://www.linkedin.com/in/komal-kumari-79234a258/",
-            github: "#",
+            github: "https://github.com/komal-nitp",
         },
         {
             name: "Sahitya Aryan",

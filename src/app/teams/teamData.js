@@ -69,8 +69,8 @@ export const team405Data={
       },
       {
         id:8,
-        name:"Vasu Chaudhary",
-        image:"/teams/team405/vasu.jfif",
+        name:"Vasu Choudhari",
+        image:"/teams/team405/vasu.jpeg",
         department:"Computer Science Department",
         linkedIn:'https://www.linkedin.com/in/vasu-choudhari?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
       },

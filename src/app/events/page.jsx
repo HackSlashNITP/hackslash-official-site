@@ -2,6 +2,7 @@ import { connectToDb } from "@/lib/db";
 import React from "react";
 import { Event } from "@/lib/models";
 import Link from "next/link";
+import DOMPurify from "isomorphic-dompurify";
 
 const EventsPage = async () => {
   await connectToDb();
