@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    // "./src/pages//*.{js,ts,jsx,tsx,mdx}",
-    // "./src/components//*.{js,ts,jsx,tsx,mdx}",
-    // "./src/app//*.{js,ts,jsx,tsx,mdx}",
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -18,7 +15,10 @@ module.exports = {
       colors: {
         primary: "#00ff9d",
         dark: "#0ec981",
-        secondary :"#223345",
+        secondary: "#223345",
+      },
+      spacing: {
+        '15': '15px', 
       },
     },
   },
