@@ -108,41 +108,39 @@ const Navbar = () => {
         </div>
       </div>
 
-  
-      <div className="w-full h-auto z-[10000] bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 sticky top-16 flex justify-center">
-        <div
-          className={`transition-transform duration-700 ease-in-out ${
-            isDropdownOpen
-              ? "translate-y-0 opacity-100"
-              : "-translate-y-10 opacity-0"
-          } transform w-full`}
-        >
-          {isDropdownOpen && (
-            <div className="md:hidden flex flex-col z-[10000] text-center bg-transparent w-full shadow-lg">
-              {List.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.path}
-                  className="transition-all duration-[700ms] transform hover:scale-105 decoration-[0.4px] underline text-white underline-offset-4 justify-center items-center text-lg py-2 flex animate-slide-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                  onClick={() => {
-                    setActive(link.path);
-                    setIsDropdownOpen(false);
-                  }}
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <div className="flex justify-center">
-                <Link href="/#getInTouch">
-                  <button className="hover:scale-105 decoration-[0.4px] transform transition-all underline underline-offset-4 justify-center items-center text-lg py-2 px-4 flex text-primary">
-                    Contact Us
-                  </button>
-                </Link>
-              </div>
+      <div
+        className={`fixed top-16 w-full left-0 transition-transform duration-700 ease-in-out z-[10000] ${
+          isDropdownOpen
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-full opacity-0"
+        }`}
+      >
+      
+        {isDropdownOpen && (
+          <div className="md:hidden flex flex-col text-center bg-black bg-opacity-90 w-full shadow-lg py-4">
+            {List.map((link, index) => (
+              <Link
+                key={index}
+                href={link.path}
+                className="transition-all duration-[700ms] transform hover:scale-105 decoration-[0.4px] underline text-white underline-offset-4 justify-center items-center text-lg py-2 flex animate-slide-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+                onClick={() => {
+                  setActive(link.path);
+                  setIsDropdownOpen(false);
+                }}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <div className="flex justify-center">
+              <Link href="/#getInTouch">
+                <button className="hover:scale-105 decoration-[0.4px] transform transition-all underline underline-offset-4 justify-center items-center text-lg py-2 px-4 flex text-primary">
+                  Contact Us
+                </button>
+              </Link>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </>
   );
