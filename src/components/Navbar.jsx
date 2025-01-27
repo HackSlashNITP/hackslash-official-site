@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="py-2 md:py-0 w-full h-auto z-50 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 sticky top-0 grid grid-cols-3 items-center ">
+      <div className="py-2 md:py-0 w-full h-auto z-[10000] bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 sticky top-0 grid grid-cols-3 items-center">
         <div className="ml-[20px] sm:ml-[30px] md:ml-[50px] xl:ml-[90px] col-span-1">
           <Link href={"/"}>
             <Image
@@ -108,7 +108,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className=" w-full h-auto z-40 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 sticky top-16 flex justify-center">
+  
+      <div className="w-full h-auto z-[10000] bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 sticky top-16 flex justify-center">
         <div
           className={`transition-transform duration-700 ease-in-out ${
             isDropdownOpen
@@ -117,7 +118,7 @@ const Navbar = () => {
           } transform w-full`}
         >
           {isDropdownOpen && (
-            <div className="md:hidden flex flex-col text-center bg-transparent w-full shadow-lg">
+            <div className="md:hidden flex flex-col z-[10000] text-center bg-transparent w-full shadow-lg">
               {List.map((link, index) => (
                 <Link
                   key={index}
