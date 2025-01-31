@@ -1,5 +1,5 @@
 "use client";
-import Ellip from "../../../../public/ellip.svg";
+import Ellip from "../../../../public/staticAssets/svgs/ellip.svg";
 import Image from "next/image";
 import { TeamCoLead, TeamLeadCard } from "@/components/TeamLeadCard";
 import { TeamMemberCard } from "@/components/TeamMemberCard";
@@ -77,28 +77,28 @@ const Domain = ({ params }) => {
   }, []);
   const translateProperties = [
     {
-      translateX: ["-536px", "430px","430px", "0px"],
+      translateX: ["-536px", "430px", "430px", "0px"],
     },
     {
-      translateX: ["430px", "430px","430px", "0px"],
+      translateX: ["430px", "430px", "430px", "0px"],
     },
     {
-      translateX: ["-536px", "30px","30px", "0px"],
+      translateX: ["-536px", "30px", "30px", "0px"],
     },
     {
-      translateX: ["430px", "30px","30px", "0px"],
+      translateX: ["430px", "30px", "30px", "0px"],
     },
     {
-      translateX: ["-536px", "-440px","-440px", "0px"],
+      translateX: ["-536px", "-440px", "-440px", "0px"],
     },
     {
-      translateX: ["430px", "-440px","-440px", "0px"],
+      translateX: ["430px", "-440px", "-440px", "0px"],
     },
     {
-      translateX: ["-536px", "200px","200px", "0px"],
+      translateX: ["-536px", "200px", "200px", "0px"],
     },
     {
-      translateX: ["430px", "200px","200px","200px", "0px"],
+      translateX: ["430px", "200px", "200px", "200px", "0px"],
     },
   ];
 
@@ -110,34 +110,40 @@ const Domain = ({ params }) => {
         src={Ellip}
       />
 
-       <h1
-        style={{textShadow:'8px 8px 8px rgba(14, 201, 129, 0.8)'}}
+      <h1
+        style={{ textShadow: "8px 8px 8px rgba(14, 201, 129, 0.8)" }}
         className="absolute lg:left-[770px] lg:top-[340px] lg:h-[200px] sm:h-24 sm:left-4 sm:top-20 left-[40px] top-24 text-[200px] aspect-square z-30 text-dark"
-      >{'['}</h1>
+      >
+        {"["}
+      </h1>
 
       <h1 className="text-white text-center lg:text-7xl sm:text-6xl text-4xl md:pt-10 py-6 mb-5">
         {teamData.name} ({teamData.domain})
       </h1>
       <div className="w-screen flex items-center lg:px-10 flex-col gap-12">
-        <TeamLeadCard teamLeadData={teamData.teamLead} />
-        <TeamCoLead teamCoLeadData={teamData.teamCoLead} />
+        {teamData.teamLead && <TeamLeadCard teamLeadData={teamData.teamLead} />}
+        {teamData.teamCoLead&&<TeamCoLead teamCoLeadData={teamData.teamCoLead} />}
       </div>
       <div className=" py-4 w-full">
         <div className="relative">
-          
-              <h1
-             style={{textShadow:'8px 8px 8px rgba(14, 201, 129, 0.8)'}}
-             className="absolute sm:left-[100px] sm:top-[50px] sm:h-[200px] left-[20px] top-24 text-[200px] aspect-square z-30 text-dark"
-           >{'{'}</h1>
-             <h1
-             style={{textShadow:'8px 8px 8px rgba(14, 201, 129, 0.8)'}}
-             className="absolute sm:left-[340px] sm:top-[300px] sm:h-[200px] left-[320px] top-[550px] text-[200px] aspect-square z-30 text-dark"
-           >{'}'}</h1>
-            <h1
-             style={{textShadow:'6px 6px 6px rgba(14, 201, 129, 0.5)'}}
-             className="absolute sm:left-[65vw] sm:top-[300px] sm:h-[200px] left-[320px] top-[300px] text-[200px] aspect-square z-30 text-dark"
-           >\</h1>
-           
+          <h1
+            style={{ textShadow: "8px 8px 8px rgba(14, 201, 129, 0.8)" }}
+            className="absolute sm:left-[100px] sm:top-[50px] sm:h-[200px] left-[20px] top-24 text-[200px] aspect-square z-30 text-dark"
+          >
+            {"{"}
+          </h1>
+          <h1
+            style={{ textShadow: "8px 8px 8px rgba(14, 201, 129, 0.8)" }}
+            className="absolute sm:left-[340px] sm:top-[300px] sm:h-[200px] left-[320px] top-[550px] text-[200px] aspect-square z-30 text-dark"
+          >
+            {"}"}
+          </h1>
+          <h1
+            style={{ textShadow: "6px 6px 6px rgba(14, 201, 129, 0.5)" }}
+            className="absolute sm:left-[65vw] sm:top-[300px] sm:h-[200px] left-[320px] top-[300px] text-[200px] aspect-square z-30 text-dark"
+          >
+            \
+          </h1>
 
           <Image
             alt="ellip.svg"
@@ -145,16 +151,18 @@ const Domain = ({ params }) => {
             src={Ellip}
           />
         </div>
-        <h1 className="md:mx-10 mx-4 text-white lg:text-5xl sm:text-6xl text-4xl md:py-16 md:pb-10 lg:mb-16 mb-5 py-4">
-          Members
-        </h1>
+       {
+        teamData.teamMembers &&  <h1 className="md:mx-10 mx-4 text-white lg:text-5xl sm:text-6xl text-4xl md:py-16 md:pb-10 lg:mb-16 mb-5 py-4">
+        Members
+      </h1>
+       }
 
         <div className="overflow-hidden">
           <motion.div transition={{delay:0.5}} className="flex lg:px-12 md:px-4 flex-row flex-wrap lg:gap-x-10 md:gap-x-7 gap-x-4 gap-y-5 justify-center w-[100%]">
-            {teamData.teamMembers.map((teamMember, index) => (
+            {teamData.teamMembers && teamData.teamMembers.map((teamMember, index) => (
               <TeamMemberCard
                 key={teamMember.id}
-                translateProperty={translateProperties[index%8]}
+                translateProperty={translateProperties[index % 8]}
                 index={index}
                 teamMemberData={teamMember}
               />

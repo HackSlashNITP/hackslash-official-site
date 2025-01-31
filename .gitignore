@@ -20,7 +20,7 @@ package-lock.json
 # misc
 .DS_Store
 *.pem
-# .env*
+.env*
 
 # debug
 npm-debug.log*
@@ -29,9 +29,13 @@ yarn-error.log*
 
 # local env files
 
+
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+yarn.lock

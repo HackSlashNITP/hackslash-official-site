@@ -2,7 +2,7 @@
 const nextConfig = {
     transpilePackages: ['redux-persist'],
     images : {
-        domains : ['res.cloudinary.com']
+        domains : ['res.cloudinary.com'],
     }
 };
 

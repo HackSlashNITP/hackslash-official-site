@@ -15,7 +15,7 @@ export default async function Gallery(){
     return(
         <>
         {/* <ImageSlider/> */}
-        <h1 className="text-5xl text-center text-green-400 underline m-2 p-2">Inspiration Hub</h1>
+        <h1 className="text-5xl text-center text-green-400 underline m-2 p-2">Gallery</h1>
         <div className="flex justify-center">
         </div>
 

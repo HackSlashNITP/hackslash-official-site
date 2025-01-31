@@ -1,6 +1,10 @@
 'use client'
 import React, { useContext, useEffect, useState } from 'react'
-import ReactQuill from 'react-quill';
+import dynamic from 'next/dynamic'
+const ReactQuill = dynamic(() => import('react-quill'), {
+  ssr: false,
+  loading: () => <p>Loading editor...</p>
+})
 import 'react-quill/dist/quill.snow.css';
 import { CldImage, CldUploadWidget } from 'next-cloudinary';
 import Image from 'next/image';
@@ -12,6 +16,8 @@ const CreateEvent = () => {
   const [value, setValue] = useState('');
   const [images, setImages] = useState([]);
   const [date, setDate] = useState(null);
+  const [location,setLocation] = useState('');
+  const [link, setLink] = useState('');
   const [title, setTitle] = useState('');
   const router = useRouter();
   const [loading, setLoading] = useState(true);
@@ -52,7 +58,7 @@ const CreateEvent = () => {
         return alert('Please add all fields');
       }
 
-      const data = await createEvent(value, images, title, date);
+      const data = await createEvent(title,value, images, date,location, link);
       if(data?.success) {
        return  router.push(data?.url);
       }
@@ -70,7 +76,9 @@ const CreateEvent = () => {
       <div className='flex-col lg:flex-row flex gap-4 w-full p-4'>
         <div className='flex-[3] flex flex-col gap-4'>
           <input type="text" name='title' value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Enter a title for the event' className='bg-gray-900 p-2 rounded-md'/>
-          <input type="date" name="date" className='w-fit bg-black text-white bg-gray-900 p-2 rounded-md' onChange={(e) => setDate(e.target.value)
+          <input type="text" name='location' value={location} onChange={(e) => setLocation(e.target.value)} placeholder='Location of event' className='bg-gray-900 p-2 rounded-md'/>
+          <input type="text" name='link' value={link} onChange={(e) => setLink(e.target.value)} placeholder='Registration link(if any)' className='bg-gray-900 p-2 rounded-md'/>
+          <input type="date" style={{color : 'black', background : 'white'}} name="date" className='w-fit bg-black text-white bg-gray-900 p-2 rounded-md' onChange={(e) => setDate(e.target.value)
           }/>
           <ReactQuill className='h-[450px]' theme="snow" value={value} onChange={setValue} />
         </div>

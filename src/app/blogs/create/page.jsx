@@ -1,6 +1,10 @@
 'use client'
 import React, { useContext, useEffect, useState } from 'react'
-import ReactQuill from 'react-quill';
+import dynamic from 'next/dynamic'
+const ReactQuill = dynamic(() => import('react-quill'), {
+  ssr: false,
+  loading: () => <p>Loading editor...</p>
+})
 import 'react-quill/dist/quill.snow.css';
 import { CldImage, CldUploadWidget } from 'next-cloudinary';
 import Image from 'next/image';
@@ -16,7 +20,7 @@ const CreateBlog = () => {
   const [loading, setLoading] = useState(true);
   const {user} = useContext(UserContext);
 
-  useEffect(() => {;
+  useEffect(() => {
     if(user == undefined) {
       return;
     }
