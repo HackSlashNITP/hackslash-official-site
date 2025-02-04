@@ -27,10 +27,10 @@ export const team405Data={
       },
       {
         id:2,
-        name:"Jatin Avtani",
-        image:"/teams/team405/jatin.jpg",
+        name:"Aditya Raj",
+        image:"/teams/team405/ADITYARAJ.png",
         department:"Computer Science Department",
-        linkedIn:'https://www.linkedin.com/in/jatin-avtani-55b9b328a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+        linkedIn:'https://www.linkedin.com/in/adityacyan/'
       },
       {
         id:3,
@@ -89,7 +89,7 @@ export const team405Data={
         linkedIn:'http://www.linkedin.com/in/saniya-ahmad-4b11a1274'
       },{
         id:11,
-        name:"Sandeep Kumar Gaund",
+        name:"Sandeep Kumar Gond",
         image:"/teams/team405/sandeep.jpg",
         department:"Computer Science Department",
         linkedIn:'http://www.linkedin.com/in/sandeep-kumar-gond-2b6280290'
@@ -113,10 +113,34 @@ export const team405Data={
         linkedIn:'https://www.linkedin.com/in/abhijaat-krishna-98674b29a/'
       },{
         id:15,
-        name:"Aditya Raj",
-        image:"/teams/team405/ADITYA_RAJ.jpg",
+        name:"Jatin Avtani",
+        image:"/teams/team405/jatin.jpg",
         department:"Computer Science Department",
-        linkedIn:'https://www.linkedin.com/in/adityacyan/'
+        linkedIn:'https://www.linkedin.com/in/jatin-avtani-55b9b328a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      },{
+        id:16,
+        name:"Harsh Dwivedi",
+        image:"/teams/team405/HARSH_DWIVEDI.jpg",
+        department:"Electronics and Communications department",
+        linkedIn:'https://www.linkedin.com/in/harsh-dwivedi-4b9bb9289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      },{
+        id:17,
+        name:"Satyarth Srivastava",
+        image:"/teams/team405/SATYARTH_SRIVASTAVA.jpg",
+        department:"Electronics and Communications Department",
+        linkedIn:'https://www.linkedin.com/in/satyarth-srivastava'
+      },{
+        id:18,
+        name:"Anushka Kale",
+        image:"/teams/team405/Anushka_Kale.jpg",
+        department:"Electronics and Communications Department",
+        linkedIn:'https://www.linkedin.com/in/anushka-kale-525595287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      },{
+        id:18,
+        name:"Nikita Pant",
+        image:"/teams/team405/Nikita_Pant.jpg",
+        department:"Electronics and Communications Department",
+        linkedIn:'#'
       }
 
     ]
@@ -147,7 +171,7 @@ export const team405Data={
         id:1,
         name:"Rahul Chaudhary",
         image:"/teams/flutter/RAHUL_CHAUDHARY.jpg",
-        department:"Electronics and communicatios department",
+        department:"Electronics and communications department",
         linkedIn:'#'
       },
       {
@@ -191,10 +215,22 @@ export const team405Data={
         linkedIn:'https://www.linkedin.com/in/raviupadhyay23?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
       },{
         id:8,
+        name:"Tanay Palekar",
+        image:"/teams/flutter/Tanay_P.jpg",
+        department:"Computer Science Department",
+        linkedIn:'https://www.linkedin.com/in/palekar-tanay-80b0a428b/'
+      },{
+        id:9,
         name:"Priyanshi Prasad",
         image:"/teams/flutter/PRIYANSHI_PRASAD.jpg",
         department:"Electronics and communications department",
         linkedIn:'https://www.linkedin.com/in/priyanshi-prasad-8ba08b28a/'
+      },{
+        id:10,
+        name:"Trinetra Kumar",
+        image:"/teams/flutter/TRINETRA_KUMAR.jpg",
+        department:"Electronics and communications department",
+        linkedIn:'https://www.linkedin.com/in/trinetra-kumar-b2440b28a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
       }
     ]
     
@@ -204,7 +240,7 @@ export const team405Data={
     name:'Nougat',
     domain:'Kotlin',
     teamLead:{
-      name:'Raj Chirag Kumar',
+      name:'Rai Chirag Kumar',
       image:"/leads/CHIRAG_KUMAR.jpg",
       department:'Computer Science Department',
       domain:'Development',
@@ -218,7 +254,7 @@ export const team405Data={
     name:'Gray Interface',
     domain:'AI/ML',
     teamLead:{
-      name:'Shiva Singh Begari',
+      name:'Shiva Singh Bagari',
       image:"/leads/SHIVA_SINGH_BAGRI.jpg",
       department:'MNC',
       domain:'Development',
@@ -260,6 +296,40 @@ export const team405Data={
         image:"/teams/AI-ML/ASHUTOSH_PANDA.jpg",
         department:"Electronics and communications department",
         linkedIn:'#'
+      },
+      {
+        id:6,
+        name:"Suryakant Acharya",
+        image:"/teams/AI-ML/Suryakant_Acharya.jpg",
+        department:"Computer Science Department",
+        linkedIn:'www.linkedin.com/in/suryakant-acharya-8b09a628a'
+      },
+      {
+        id:7,
+        name:"Sonu Jhajharia",
+        image:"/teams/AI-ML/sonu_j.jpeg",
+        department:"Computer Science Department",
+        linkedIn:'https://www.linkedin.com/in/sonu-jhajharia-122a39285/'
+      },
+      {
+        id:9,
+        name:"Harsh Martin Topno",
+        image:"/teams/AI-ML/Harsh_M_Topno.jpg",
+        department:"Computer Science Department",
+        linkedIn:'https://www.linkedin.com/in/harsh-martin-topno-924756312?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      },{
+        id:9,
+        name:"Sanjeet Raj",
+        image:"/teams/AI-ML/sanjeet.jpg",
+        department:"Computer Science Department",
+        linkedIn:'https://www.linkedin.com/in/sanjeetraj40'
+      },
+      {
+        id:10,
+        name:"Kanishka Rajvansh",
+        image:"/teams/AI-ML/KANISHKA_RAJVANSH.jpg",
+        department:"Electronics and communications department",
+        linkedIn:'https://www.linkedin.com/in/kanishka-rajvansh-073436280'
       }
      
     ]
@@ -396,6 +466,13 @@ export const team405Data={
         image:"/teams/DSA/UTSAV_KUMAR.png",
         department:"Electronics and Communications Department",
         linkedIn:'#'
+      },
+      {
+        id:8,
+        name:"Prashant Yadav",
+        image:"/teams/DSA/PRASHANT_YADAV.jpg",
+        department:"Computer Science Department",
+        linkedIn:'https://www.linkedin.com/in/prash-nitp/'
       }
     ]
     
