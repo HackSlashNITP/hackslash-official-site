@@ -13,7 +13,6 @@ const List = [
   { name: "Events", path: "/events" },
   { name: "Website", path: "/people/developers" },
   { name: "Office", path: "/office" },
-  { name: "Alumni", path: "/alumni" },
 ];
 
 const Navbar = () => {
