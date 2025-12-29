@@ -123,7 +123,7 @@ const AlumniPage = () => {
       />
 
 <div className="grid gap-10 sm:gap-40 mt-10 sm:mt-20">
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-12 gap-y-20 justify-center">
           {alumni.map((member, idx) => (
             <CoordinatorCard key={idx} {...member} />
           ))}
