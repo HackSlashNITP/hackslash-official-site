@@ -127,11 +127,11 @@ export const verifyToken = async () => {
 
         return new Promise((resolve, reject) => {
             jwt.verify(token.value, process.env.JWT_SECRET, (err, payload) => {
-                if(err && err.name == "TokenExpiredError") {
-                    redirect('/login');
-                }
+                // if(err && err.name == "TokenExpiredError") {
+                //     redirect('/login');
+                // }
                 
-                if (err) reject(err);
+                // if (err) reject(err);
                 
                 // console.log(payload);
 
