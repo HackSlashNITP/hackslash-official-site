@@ -10,8 +10,8 @@ const List = [
   { name: "Teams", path: "/teams" },
   { name: "Blogs", path: "/blogs" },
   { name: "Gallery", path: "/gallery" },
+  { name: "Achievements", path: "/achievements" },
   { name: "Events", path: "/events" },
-  { name: "Website", path: "/people/developers" },
   { name: "Office", path: "/office" },
   { name: "Alumni", path: "/alumni" },
 ];
