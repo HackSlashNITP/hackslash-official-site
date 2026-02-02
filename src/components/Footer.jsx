@@ -42,7 +42,7 @@ const Footer = () => {
                   height={20}
                 />
               </Link>
-              <Link href="https://discord.gg/SfcsegMA">
+              <Link href="https://discord.gg/7SsdsuXD57">
                 <Image
                   src="/icons/discord.svg"
                   alt="Discord"
@@ -88,7 +88,7 @@ const Footer = () => {
                   </Link>
                 </li> */}
                 <li>
-                  <Link href="https://discord.gg/SfcsegMA" className="hover:text-green-400">
+                  <Link href="https://discord.gg/7SsdsuXD57" className="hover:text-green-400">
                     Discord
                   </Link>
                 </li>
