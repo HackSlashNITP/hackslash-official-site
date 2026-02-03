@@ -103,6 +103,11 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/people/developers" className="hover:text-green-400">
+                    Website
+                  </Link>
+                </li>
+                <li>
                     <a href="mailto:hackslash@nitp.ac.in">Sponsor us</a>
                 </li> 
                 <li>
