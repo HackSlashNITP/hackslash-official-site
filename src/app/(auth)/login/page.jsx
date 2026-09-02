@@ -4,6 +4,7 @@ import { UserContext } from '@/lib/userContext';
 import { redirect, useRouter } from 'next/navigation';
 import React, { useContext, useState } from 'react'
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Login = () => {
   const [message, setMessage] = useState({});
@@ -42,9 +43,11 @@ const Login = () => {
         <div className='text-center mb-8 sm:mb-12'>
           <div className='inline-block mb-4'>
             <div className='w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-black-400 flex items-center justify-center shadow-lg shadow-cyan-500/50 overflow-hidden group hover:scale-110 transition-transform duration-300'>
-              <img
+              <Image
                 src='/favicon.ico'
                 alt='HackSlash Logo'
+                width={48}
+                height={48}
                 className='w-12 h-12 object-cover group-hover:scale-125 transition-transform'
               />
             </div>
@@ -137,7 +140,7 @@ const Login = () => {
           <div className='h-px bg-gradient-to-r from-transparent via-white/20 to-transparent'></div>
           <div className='p-6 sm:p-8 text-center'>
             <p className='text-gray-400 text-sm'>
-              Don't have an account?{' '}
+              Don&apos;t have an account?{' '}
               <Link href='/register' className='text-cyan-400 font-semibold hover:text-green-400 transition-colors'>
                 Register here
               </Link>
